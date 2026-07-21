@@ -111,6 +111,7 @@ body{
 
 /* --- divider between playbills, filling the scroll gap --- */
 .era-divider{height:35vh;display:flex;align-items:center;justify-content:center;gap:16px}
+.era-divider.compact{height:12vh}
 .era-divider-seg{
   width:130px;
   border-top:6px double var(--marquee);
@@ -323,13 +324,20 @@ body{
 /* ---------- OUTRO ---------- */
 .outro{max-width:760px;margin:0 auto;padding:14vh 24px 16vh}
 .outro h3{
-  font-family:'Anton',sans-serif;font-size:34px;text-transform:uppercase;
+  font-family:'Anton',sans-serif;font-size:34px;text-transform:uppercase;text-align:center;;
   color:var(--marquee);margin-bottom:18px;
 }
 .outro p{color:#CBBFA8;margin-bottom:14px;font-size:16px}
 .outro ul{margin:10px 0 0 20px;color:#CBBFA8;font-size:15px}
 .outro li{margin-bottom:8px}
 .outro a{color:var(--marquee)}
+.outro .works-cited{
+  list-style:none;margin:10px 0 0;color:#CBBFA8;font-size:14.5px;line-height:1.7;
+}
+.outro .works-cited li{
+  margin-bottom:16px;padding-left:2em;text-indent:-2em;
+}
+.outro .works-cited em{color:#E4D9C2;font-style:italic}
 
 /* ---------- RESPONSIVE ---------- */
 @media (max-width:980px){
