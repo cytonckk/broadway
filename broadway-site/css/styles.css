@@ -1,0 +1,288 @@
+/* ==========================================================================
+   BROADWAY TIME MAP — styles
+   Left column = Playbill pamphlet look. Edit the tokens below to retheme.
+   ========================================================================== */
+
+:root{
+  /* stage (page) */
+  --stage:#16110D;
+  --stage-soft:#211913;
+  --line:#3A2E23;
+
+  /* marquee accents */
+  --curtain:#8E2434;
+  --marquee:#FEC10D;
+  --marquee-dim:#C49A0A;
+
+  /* playbill pamphlet */
+  --pb-yellow:#FFE600;      /* the banner yellow */
+  --pb-black:#141210;
+  --pb-cream:#FBF7EE;       /* interior "program page" paper */
+  --pb-ink:#1B1611;
+  --pb-ink-soft:#5C5347;
+  --pb-rule:#B8AD99;
+
+  --paper:#F0E7D3;          /* generic light text on dark bg */
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--stage);
+  color:var(--paper);
+  font-family:'Lora',serif;
+  line-height:1.6;
+}
+
+/* ---------- HERO ---------- */
+.hero{
+  min-height:92vh;
+  display:flex;flex-direction:column;justify-content:center;align-items:center;
+  text-align:center;padding:48px 24px;position:relative;overflow:hidden;
+}
+.hero .eyebrow{
+  font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.35em;
+  color:var(--marquee);text-transform:uppercase;margin-bottom:22px;
+}
+.hero h1{
+  font-family:'Anton',sans-serif;
+  font-size:clamp(44px,8.5vw,110px);
+  line-height:.98;letter-spacing:.01em;text-transform:uppercase;
+  max-width:14ch;
+}
+.hero h1 .gold{color:var(--marquee)}
+.hero .sub{
+  max-width:560px;margin-top:26px;font-size:17px;color:#CBBFA8;font-style:italic;
+}
+.hero .scroll-hint{
+  position:absolute;bottom:34px;font-family:'IBM Plex Mono',monospace;
+  font-size:12px;letter-spacing:.25em;color:var(--marquee-dim);text-transform:uppercase;
+  animation:bob 2.4s ease-in-out infinite;
+}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(7px)}}
+.bulb-row{display:flex;gap:14px;margin-bottom:30px}
+.bulb-row i{
+  width:9px;height:9px;border-radius:50%;
+  background:var(--marquee);box-shadow:0 0 10px 2px rgba(233,185,79,.55);
+  animation:twinkle 1.8s infinite;
+}
+.bulb-row i:nth-child(2n){animation-delay:.6s}
+.bulb-row i:nth-child(3n){animation-delay:1.1s}
+@keyframes twinkle{0%,100%{opacity:1}50%{opacity:.35}}
+
+/* ---------- MAIN GRID: playbill | map | timeline ---------- */
+.stage-grid{
+  display:grid;
+  grid-template-columns:minmax(340px,460px) 1fr 90px;
+  max-width:1500px;margin:0 auto;
+}
+
+/* =========================================================
+   LEFT COLUMN — the Playbill pamphlet
+   Each era card is styled like a Playbill cover + program page
+   ========================================================= */
+.reading-col{padding:8vh 28px 20vh 32px}
+
+.era-card{
+  background:var(--pb-cream);color:var(--pb-ink);
+  border-radius:6px;
+  margin-bottom:55vh;                /* the gap gives each era its own scroll "scene" */
+  border:4px solid var(--stage);
+  box-shadow:0 0 0 3px rgba(255,255,255), 0 0 0 6px var(--stage), 0 18px 50px rgba(0,0,0,.55);
+  overflow:hidden;                   /* keeps the banner corners clean */
+}
+.era-card:last-child{margin-bottom:12vh}
+
+/* --- the yellow PLAYBILL banner --- */
+.pb-banner{
+  background:var(--pb-yellow);
+  padding:0;
+  border-bottom:4px solid var(--pb-black);
+}
+.pb-logo-img{
+  width:100%;
+  height:auto;
+  display:block;
+}
+.pb-theater{
+  font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.45em;
+  text-transform:uppercase;color:var(--pb-black);
+  text-align:center;padding:8px 22px 18px;
+}
+
+/* --- cover area: venue line, title, cover image --- */
+.pb-cover{padding:18px 26px 6px;text-align:center}
+.pb-date{
+  font-family:'Anton',sans-serif;font-size:54px;line-height:1;
+  color:var(--curtain);letter-spacing:.01em;
+}
+.pb-title{
+  font-family:'Lora',serif;font-weight:700;font-size:24px;line-height:1.25;
+  letter-spacing:.01em;margin:6px 0 18px;
+  color:var(--pb-black);
+}
+
+/* --- interior "program" pages --- */
+.pb-program{padding:4px 26px 28px}
+.pb-section{
+  text-align:center;
+  font-family:'Lora',serif;font-variant:small-caps;letter-spacing:.34em;
+  font-size:13px;color:var(--pb-ink);
+  margin:22px 0 12px;position:relative;
+}
+.pb-section::before,.pb-section::after{
+  content:"";position:absolute;top:50%;width:18%;
+  border-top:3px double var(--pb-rule);
+}
+.pb-section::before{left:0}
+.pb-section::after{right:0}
+
+.why p{
+  font-size:14.5px;line-height:1.6;font-style:italic;color:#3A3128;
+  text-align:center;padding:0 6px;
+}
+
+.pb-body p{font-size:15.5px;margin-bottom:14px}
+.pb-body p:last-child{margin-bottom:0}
+
+/* --- image slots: swap the .img-ph div for an <img>, nothing else changes --- */
+.img-slot{margin:20px 0}
+.img-slot .img-ph,.img-slot img{
+  width:100%;aspect-ratio:16/10;object-fit:cover;display:flex;
+  align-items:center;justify-content:center;text-align:center;
+  border:2px dashed var(--pb-ink-soft);border-radius:2px;
+  background:repeating-linear-gradient(45deg,#EFE8D8,#EFE8D8 12px,#FBF7EE 12px,#FBF7EE 24px);
+  color:var(--pb-ink-soft);font-family:'IBM Plex Mono',monospace;
+  font-size:12.5px;letter-spacing:.05em;padding:14px;
+}
+.img-slot img{border-style:solid;border-color:var(--pb-black)}
+.img-slot figcaption{
+  font-size:12.5px;color:var(--pb-ink-soft);margin-top:7px;font-style:italic;text-align:center;
+}
+
+/* =========================================================
+   CENTER — sticky map
+   ========================================================= */
+.map-col{position:relative}
+.map-sticky{
+  position:sticky;top:0;height:100vh;
+  display:flex;flex-direction:column;justify-content:center;align-items:center;
+  padding:26px 10px;
+}
+.map-frame{
+  width:min(92%,560px);aspect-ratio:3/4;
+  background:var(--stage-soft);
+  border:4px solid var(--stage);border-radius:4px;
+  box-shadow:0 0 0 3px rgba(255,255,255), 0 0 0 6px var(--stage), inset 0 0 80px rgba(0,0,0,.6);
+  position:relative;overflow:hidden;
+}
+.map-frame svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+.strip-map{
+  position:absolute;top:0;left:0;display:none;
+  transform-origin:0 0;
+  transition:transform .9s cubic-bezier(.45,0,.25,1);
+  will-change:transform;
+}
+.map-title{
+  font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.3em;
+  text-transform:uppercase;color:var(--marquee-dim);margin-bottom:14px;
+}
+.map-caption{
+  margin-top:14px;font-family:'IBM Plex Mono',monospace;font-size:12.5px;
+  color:#B8A98C;max-width:520px;text-align:center;min-height:38px;
+}
+.map-caption b{color:var(--marquee);font-weight:500}
+
+/* SVG pieces */
+.street{stroke:#33291F;stroke-width:1.4;fill:none}
+.shore{stroke:#4A3B2C;stroke-width:2;fill:#1B1510}
+.broadway{
+  stroke:var(--marquee);stroke-width:3;fill:none;stroke-linecap:round;
+  filter:drop-shadow(0 0 5px rgba(233,185,79,.5));
+}
+.dot{fill:var(--marquee);stroke:#16110D;stroke-width:1.5}
+.dot-gone{fill:none;stroke:var(--curtain);stroke-width:2.4}
+.dot-label{
+  font-family:'IBM Plex Mono',monospace;font-size:13px;fill:#E4D6B7;
+  paint-order:stroke;stroke:#16110D;stroke-width:3px;stroke-linejoin:round;
+}
+.dot-label.gone{fill:#D98A97}
+.district-halo{fill:rgba(233,185,79,.09);stroke:rgba(233,185,79,.35);stroke-width:1;stroke-dasharray:4 4}
+
+/* =========================================================
+   RIGHT — sticky timeline
+   ========================================================= */
+.timeline-col{position:relative}
+.timeline-sticky{
+  position:sticky;top:0;height:100vh;
+  display:flex;align-items:center;justify-content:center;
+}
+.timeline{display:flex;flex-direction:column;align-items:center;position:relative;padding:0 16px}
+.timeline::before{
+  /* starts and ends at the centre of the first/last circle */
+  content:"";position:absolute;top:30px;bottom:50px;width:14px;
+  background:#3A8F82;
+  left:50%;transform:translateX(-50%);
+}
+.stamp{
+  position:relative;z-index:1;background:none;border:none;cursor:pointer;
+  display:flex;flex-direction:column;align-items:center;
+  padding:10px 0;
+  color:#E0E0E0;
+  transition:color .3s;
+}
+/* SVG text matches map rendering: paint-order + stroke-linejoin:round */
+.stamp-year-svg{ width:56px;height:18px;overflow:visible;display:block; }
+.stamp-year-text{
+  font-family:'IBM Plex Mono',monospace;font-size:14px;
+  fill:currentColor;
+  paint-order:stroke fill;
+  stroke:var(--stage);stroke-width:4px;stroke-linejoin:round;
+}
+.stamp .bulb{
+  width:40px;height:40px;border-radius:50%;
+  background:var(--stage);           /* solid fill hides the track behind it */
+  border:3px solid var(--marquee);
+  margin-bottom:6px;
+  /* dark outer ring covers the track on both sides of the circle */
+  box-shadow:0 0 0 5px var(--stage);
+  transition:background .3s, box-shadow .3s;
+}
+.stamp.active{color:#FFFFFF}
+.stamp.active .bulb{
+  background:var(--marquee);
+  /* 5px dark gap → 3px cream ring (matches border thickness) → 5px dark outer */
+  box-shadow:0 0 0 5px var(--stage), 0 0 0 8px #F2E8D0, 0 0 0 13px var(--stage);
+}
+.tl-label{
+  writing-mode:vertical-rl;font-family:'IBM Plex Mono',monospace;font-size:15px;
+  letter-spacing:.4em;text-transform:uppercase;color:var(--marquee-dim);
+  position:absolute;right:calc(100% + 8px);top:50%;transform:translateY(-50%);
+}
+
+/* ---------- OUTRO ---------- */
+.outro{max-width:760px;margin:0 auto;padding:14vh 24px 16vh}
+.outro h3{
+  font-family:'Anton',sans-serif;font-size:34px;text-transform:uppercase;
+  color:var(--marquee);margin-bottom:18px;
+}
+.outro p{color:#CBBFA8;margin-bottom:14px;font-size:16px}
+.outro ul{margin:10px 0 0 20px;color:#CBBFA8;font-size:15px}
+.outro li{margin-bottom:8px}
+.outro a{color:var(--marquee)}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width:980px){
+  .stage-grid{grid-template-columns:1fr}
+  .timeline-col{display:none}
+  .map-col{order:-1}
+  .map-sticky{position:sticky;top:0;height:56vh;background:var(--stage);z-index:5;padding:12px}
+  .map-frame{width:min(94%,420px)}
+  .reading-col{padding:6vh 16px 16vh}
+  .era-card{margin-bottom:32vh}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .bulb-row i,.hero .scroll-hint{animation:none}
+  .strip-map{transition:none}
+}

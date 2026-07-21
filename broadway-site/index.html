@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Longest Street in the World — How Broadway Moved Uptown</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- ================= HERO ================= -->
+<header class="hero">
+  <div class="eyebrow">Nicholas Lau &mdash; Writing as Critical Inquiry</div>
+  <h1>The Way to Broadway</h1>
+</header>
+
+<!-- ================= MAIN (playbill | map | timeline) ================= -->
+<div class="stage-grid">
+
+  <!-- LEFT: playbill cards are injected here by js/app.js from the ERAS data -->
+  <main class="reading-col" id="reading-col"></main>
+
+  <!-- CENTER: sticky map -->
+  <div class="map-col">
+    <div class="map-sticky">
+      <div class="map-title" id="map-era-title">Manhattan &middot; 1798</div>
+      <div class="map-frame" id="map-frame">
+        <!-- Your hand-drawn strip map goes here (set MAP_IMAGE.src in js/data.js) -->
+        <img class="strip-map" id="strip-map" alt="Hand-drawn map of Manhattan">
+        <!-- SVG: placeholder base map + the dot/label overlay -->
+        <svg id="map-svg" viewBox="170 1180 340 300" preserveAspectRatio="xMidYMid meet"
+             aria-label="Stylized map of Manhattan showing theater locations by era"></svg>
+      </div>
+      <div class="map-caption" id="map-caption"></div>
+    </div>
+  </div>
+
+  <!-- RIGHT: sticky timeline -->
+  <div class="timeline-col">
+    <div class="timeline-sticky">
+      <nav class="timeline" id="timeline" aria-label="Timeline">
+        <span class="tl-label">Timeline</span>
+      </nav>
+    </div>
+  </div>
+</div>
+
+<!-- ================= OUTRO ================= -->
+<footer class="outro">
+  <h3>Why a map, and not an essay</h3>
+  <p>I could have written all of this as a paper, but I think the whole point of Broadway's history is that it's a story about <em>location</em> — about an industry physically dragging itself up an island, block by block, chasing its audience. That's something you can read about, or it's something you can watch happen. I'd rather you watch it happen.</p>
+  <p>Every stop on this timeline was chosen because something structural changed there: not just "a famous show opened," but the district moved, or the business model changed, or the city pushed back. That's the standard I used to keep this from becoming a list of every theater that ever existed.</p>
+
+  <h3 style="margin-top:40px">Image sources</h3>
+  <p>All placeholder frames are labeled with what belongs in them. Everything can be pulled from public-domain or licensed collections:</p>
+  <ul>
+    <li>NYPL Digital Collections (public-domain filter) — Billy Rose Theatre Division, theater marquee collection</li>
+    <li>Museum of the City of New York — Times Square &amp; Midtown urban photography</li>
+    <li>Library of Congress, Prints &amp; Photographs — early theater exteriors, sheet music covers</li>
+    <li>Wikimedia Commons — modern, clearly-licensed photos</li>
+    <li>IBDB (Internet Broadway Database) — dates and production facts (not images)</li>
+  </ul>
+</footer>
+
+<!-- Content text first, then map data, then the app -->
+<script src="content/eras.js"></script>
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
