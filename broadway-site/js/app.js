@@ -20,6 +20,13 @@ const ROMAN = ["I","II","III","IV","V","VI","VII","VIII","IX","X"];
    1) Build the playbill cards
 ------------------------------------------------------------------ */
 ERAS.forEach((era, i) => {
+  if (i > 0){
+    const divider = document.createElement('div');
+    divider.className = 'era-divider';
+    divider.innerHTML = '<span class="era-divider-seg left"></span><span class="era-divider-symbol">⊰·✶·⊱</span><span class="era-divider-seg right"></span>';
+    readingCol.appendChild(divider);
+  }
+
   const card = document.createElement('article');
   card.className = 'era-card';
   card.id = era.id;
@@ -290,5 +297,16 @@ const io = new IntersectionObserver(entries => {
 }, { rootMargin:"-40% 0px -40% 0px" });
 
 document.querySelectorAll('.era-card').forEach(c => io.observe(c));
+
+const dividerIo = new IntersectionObserver(entries => {
+  entries.forEach(en => {
+    if (en.isIntersecting){
+      en.target.classList.add('in-view');
+      dividerIo.unobserve(en.target);
+    }
+  });
+}, { rootMargin:"0px 0px -20% 0px" });
+
+document.querySelectorAll('.era-divider').forEach(d => dividerIo.observe(d));
 
 showEra(ERAS[0].id);
