@@ -1,69 +1,80 @@
 # Broadway Time Map
 
 An interactive, scroll-through-time map of how the Broadway theater district
-migrated up Manhattan (1798 → today). Left column is styled as a Playbill
-pamphlet; center is a map whose camera pans north as you scroll; right is a
-marquee-bulb timeline.
+migrated up Manhattan (1798 -> today). Left column is styled as a real
+Playbill pamphlet; center is a hand-drawn map whose camera pans north as
+you scroll; right is a marquee-bulb timeline.
 
 ## File structure
 
 ```
-index.html      — markup only
-css/styles.css  — all visuals (Playbill theming, map frame, timeline)
-js/data.js      — ALL CONTENT: eras, text, dots, map config  ← edit this most
-js/app.js       — rendering logic (rarely needs edits)
-assets/         — (make this) your map drawing + era photos go here
+index.html         - markup only
+css/styles.css      - all visuals (Playbill theming, map frame, timeline)
+content/eras.js      - ALL ESSAY TEXT: titles, "why this moment", body copy
+js/data.js           - MAP DATA: theater dot coordinates, view boxes, timeline dates
+js/app.js            - rendering logic (merges the two files above; rarely needs edits)
+images/
+  manhattan-map.png   - your hand-drawn map (700x1024)
+  playbill-logo.png    - the real Playbill wordmark
 ```
+
+Content is split in two on purpose: `content/eras.js` is where you edit
+writing, `js/data.js` is where you edit map coordinates. Both files share
+eras by `id` (e.g. `"e1904"`) and get merged together in `js/app.js`.
 
 ## Run it
 
-Just open `index.html` in a browser — no build step, no dependencies.
-For GitHub Pages: push the repo, then Settings → Pages → deploy from main.
+Just open `index.html` in a browser -- no build step, no dependencies.
+For GitHub Pages: push the repo, then Settings -> Pages -> deploy from main.
 
-## Drawing your map — THE DIMENSIONS
+## The map coordinate system
 
-The whole map lives in one shared coordinate space:
+Coordinates in `js/data.js` are **pixel-native** to `images/manhattan-map.png`,
+which is 700 x 1024px:
 
-| thing | value |
+| | |
 |---|---|
-| unit space | x: 180–420, y: 480–1500 (240 wide × 1020 tall) |
-| coverage | ~59th St (top) down to the Battery (bottom) |
-| aspect ratio | 240 : 1020 = **1 : 4.25** |
-| recommended canvas | **1600 × 6800 px** (PNG) |
-| viewport frame | 3:4 portrait; each era's camera box is 340×300 units |
+| x axis | 0 (west/left edge) -> 700 (east/right edge) |
+| y axis | 0 (~Central Park, north/top) -> 1024 (Battery/harbor, south/bottom) |
 
-Draw ONE tall strip map at 1600×6800 (or any size with that 1:4.25 ratio),
-save it to `assets/manhattan-strip.png`, then in `js/data.js` set:
+A dot at `{x:362, y:245}` sits exactly 362px from the left edge and 245px
+from the top edge of the image. No unit conversion, no distortion -- what
+you see in an image editor is what you type into `data.js`.
 
-```js
-const MAP_IMAGE = {
-  src: "assets/manhattan-strip.png",
-  showDotsOverImage: true   // false = hide the gold dots over your art
-};
-```
+**If you redraw the map at a different size**, scale every x/y and view
+box in `js/data.js` by the same factor (e.g. doubling the canvas to
+1400x2048 means doubling every coordinate too), and update `MAP_UNITS` in
+`js/data.js` to match the new width/height.
 
-That's it — the placeholder SVG hides itself and the same camera moves
-pan/zoom across your drawing. If your drawing's proportions match the specs
-above, the theater dots and labels will land in the correct spots on top of
-your art. Landmarks to align against while drawing (in unit coords):
-Broadway runs from (300, 1470) at Bowling Green, through (316, 1140) at
-Astor Pl, (290, 980) at 23rd, (255, 735) at 42nd, to (235, 505) at 59th.
+The current dot coordinates were read directly off the labeled reference
+map you provided, confirmed by overlaying it pixel-for-pixel against the
+plain map -- they share the same canvas, so the two lined up exactly.
 
-## Swapping in side-panel photos
+A few dots are marked in comments as **approximate** (Morosco, Helen Hayes,
+Shubert, TKTS/Duffy Square) because they weren't on your labeled reference
+map -- worth double-checking against a period plat map or Google Maps
+before treating them as precise.
 
-Find any `<figure class="img-slot">` output — in `js/data.js` each era has
-an `imgs` array with a `label` (what image belongs there + which archive to
-get it from). To use real images, replace the placeholder rendering: in
-`js/app.js` the `.img-ph` div is generated from that label; the simplest
-route is to add a `src` field to the img object and swap the div for
-`<img src="...">` — or just edit the generated HTML approach by giving each
-`imgs` entry a `src` and updating the two template strings in app.js
-(marked `img-ph`). Captions and frames stay identical.
+## Editing the map
 
-## Editing content
+In `js/data.js`, each era in `ERA_MAP` has:
+- `view: [x, y, w, h]` -- the camera's crop window for that era (keep the
+  w:h ratio near 260:347 / 0.75 to match the map frame and avoid letterboxing)
+- `dots: [{x, y, label}]` -- theaters shown for that era; add `gone:true`
+  for a demolished-theater X mark instead of a dot
+- `halo: [cx, cy, rx, ry]` -- optional dashed ellipse marking a district's
+  footprint (set to `null` to omit)
 
-Everything readable lives in `js/data.js`:
-- `why` — the "Why this moment" justification (required for every stamp)
-- `body` — array of paragraphs (written in first person)
-- `dots` — theaters shown for that era; `gone:true` renders a red ✕
-- `view` — the camera box `[x, y, w, h]` in map units
+## Editing the writing
+
+Everything readable lives in `content/eras.js`:
+- `why` -- the "Why This Moment" justification (required for every era)
+- `body` -- array of paragraphs, first person
+- `imgs` -- side-panel image slots; first one becomes the playbill cover
+
+## Swapping in real photos
+
+Each `imgs` entry in `content/eras.js` renders as a labeled placeholder
+frame in `js/app.js` (the `.img-ph` div). To use a real photo, give the
+entry a `src` and swap that div for an `<img src="...">` -- the frame,
+sizing, and caption stay identical either way.

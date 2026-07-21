@@ -91,28 +91,24 @@ const usingImage = !!MAP_IMAGE.src;
 function buildBaseMap(){
   const base = el('g', { id:'base-layer' });
 
-  // Island shoreline (stylized: Battery bottom y=1500, ~59th St top y=500)
+  // Island shoreline (stylized, pixel-native to a 700x1024 canvas:
+  // ~59th St / Central Park near y=0, the Battery near y=1000)
   base.appendChild(el('path', { class:'shore', d:
-    "M 205 500 L 195 700 L 190 900 L 195 1080 L 210 1250 L 240 1400 L 300 1490 L 360 1440 L 395 1300 L 405 1100 L 400 900 L 395 700 L 390 500" }));
+    "M 195 0 L 150 100 L 140 200 L 150 300 L 155 400 L 150 460 L 150 530 L 150 600 L 140 700 L 140 800 L 150 900 L 225 985 L 300 900 L 335 800 L 340 700 L 345 600 L 345 460 L 345 400 L 345 300 L 340 200 L 350 100 L 330 0" }));
 
-  // Grid streets above 14th (y < 1080)
-  for (let y = 520; y < 1080; y += 37)
-    base.appendChild(el('line', { class:'street', x1:200, y1:y, x2:398, y2:y }));
-  [225,265,305,345,382].forEach(x =>
-    base.appendChild(el('line', { class:'street', x1:x, y1:505, x2:x, y2:1078 })));
+  // Grid streets
+  for (let y = 40; y < 950; y += 37)
+    base.appendChild(el('line', { class:'street', x1:150, y1:y, x2:345, y2:y }));
+  [190,230,270,300].forEach(x =>
+    base.appendChild(el('line', { class:'street', x1:x, y1:20, x2:x, y2:950 })));
 
-  // Tangled downtown hints
-  [[230,1150,380,1170],[220,1230,390,1210],[245,1310,375,1290],[260,1380,350,1400]]
-    .forEach(([a,b,c,d]) =>
-      base.appendChild(el('line', { class:'street', x1:a, y1:b, x2:c, y2:d })));
-
-  // BROADWAY — the spine
+  // BROADWAY — the spine (runs through the theater waypoints)
   base.appendChild(el('path', { class:'broadway', d:
-    "M 300 1470 L 308 1340 L 312 1230 L 316 1140 L 312 1080 L 290 980 L 272 845 L 255 735 L 248 660 L 240 560 L 235 505" }));
+    "M 225 985 L 270 763 L 320 660 L 400 570 L 378 528 L 365 468 L 345 428 L 345 350 L 345 313 L 352 280 L 362 245 L 390 190 L 430 152 L 400 40" }));
 
-  const t = el('text', { class:'dot-label', x:322, y:1180, 'font-size':'15' });
+  const t = el('text', { class:'dot-label', x:250, y:600, 'font-size':'15' });
   t.textContent = "BROADWAY";
-  t.setAttribute('transform', 'rotate(80 322 1180)');
+  t.setAttribute('transform', 'rotate(75 250 600)');
   base.appendChild(t);
 
   svg.appendChild(base);
