@@ -69,6 +69,11 @@ ERAS.forEach((era, i) => {
         ${era.body.map(p => `<p>${p}</p>`).join('')}
         ${extraImgs}
       </div>
+      ${era.sources && era.sources.length ? `
+      <div class="pb-section">Sources</div>
+      <ol class="pb-sources">
+        ${era.sources.map(s => `<li><a href="${s.url}" target="_blank" rel="noopener">${s.name}</a></li>`).join('')}
+      </ol>` : ''}
     </div>`;
 
   readingCol.appendChild(card);

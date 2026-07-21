@@ -350,3 +350,12 @@ body{
   .era-divider-seg{transition:none}
   .era-divider-symbol{transition:none}
 }
+
+/* ---- bibliography / sources under each act ---- */
+.pb-sources{
+  margin:6px 0 4px;padding-left:22px;
+  font-family:'Lora',serif;font-size:12.5px;line-height:1.5;color:var(--pb-ink-soft);
+}
+.pb-sources li{margin-bottom:6px;padding-left:3px}
+.pb-sources a{color:#6a4a1f;text-decoration:none;border-bottom:1px solid #c9b892}
+.pb-sources a:hover{color:var(--curtain);border-bottom-color:var(--curtain)}
