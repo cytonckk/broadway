@@ -193,6 +193,24 @@ body{
 }
 .map-caption b{color:var(--marquee);font-weight:500}
 
+/* zoom controls — sit in the top-right corner of the map frame */
+.map-zoom{
+  position:absolute;top:10px;right:10px;z-index:4;
+  display:flex;flex-direction:column;gap:6px;
+}
+.map-zoom button{
+  width:34px;height:34px;cursor:pointer;
+  background:rgba(22,17,13,.82);color:var(--marquee);
+  border:1px solid var(--marquee-dim);border-radius:4px;
+  font-family:'IBM Plex Mono',monospace;font-size:18px;line-height:1;
+  display:flex;align-items:center;justify-content:center;
+  transition:background .2s,border-color .2s;
+}
+.map-zoom button:hover{background:rgba(233,185,79,.18);border-color:var(--marquee)}
+.map-zoom button:disabled{opacity:.35;cursor:default}
+.map-zoom button:focus-visible{outline:2px solid var(--marquee);outline-offset:2px}
+.map-zoom .zoom-reset{font-size:10px;letter-spacing:.02em}
+
 /* SVG pieces */
 .street{stroke:#33291F;stroke-width:1.4;fill:none}
 .shore{stroke:#4A3B2C;stroke-width:2;fill:#1B1510}
@@ -203,8 +221,8 @@ body{
 .dot{fill:var(--marquee);stroke:#16110D;stroke-width:1.5}
 .dot-gone{fill:none;stroke:var(--curtain);stroke-width:2.4}
 .dot-label{
-  font-family:'IBM Plex Mono',monospace;font-size:13px;fill:#E4D6B7;
-  paint-order:stroke;stroke:#16110D;stroke-width:3px;stroke-linejoin:round;
+  font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:500;fill:#F3E7CC;
+  paint-order:stroke;stroke:#16110D;stroke-width:2.6px;stroke-linejoin:round;
 }
 .dot-label.gone{fill:#D98A97}
 .district-halo{fill:rgba(233,185,79,.09);stroke:rgba(233,185,79,.35);stroke-width:1;stroke-dasharray:4 4}

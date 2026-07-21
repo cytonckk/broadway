@@ -29,10 +29,16 @@
     <div class="map-sticky">
       <div class="map-title" id="map-era-title">Manhattan &middot; 1798</div>
       <div class="map-frame" id="map-frame">
+        <!-- zoom controls -->
+        <div class="map-zoom" id="map-zoom">
+          <button id="zoom-in" aria-label="Zoom in" title="Zoom in">+</button>
+          <button id="zoom-out" aria-label="Zoom out" title="Zoom out">&minus;</button>
+          <button id="zoom-reset" class="zoom-reset" aria-label="Reset zoom" title="Reset to this era">fit</button>
+        </div>
         <!-- Your hand-drawn strip map goes here (set MAP_IMAGE.src in js/data.js) -->
-        <img class="strip-map" id="strip-map" alt="Hand-drawn map of Manhattan">
+        <img class="strip-map" id="strip-map" alt="Map of Manhattan">
         <!-- SVG: placeholder base map + the dot/label overlay -->
-        <svg id="map-svg" viewBox="150 640 260 347" preserveAspectRatio="xMidYMid meet"
+        <svg id="map-svg" viewBox="60 600 300 400" preserveAspectRatio="xMidYMid meet"
              aria-label="Stylized map of Manhattan showing theater locations by era"></svg>
       </div>
       <div class="map-caption" id="map-caption"></div>

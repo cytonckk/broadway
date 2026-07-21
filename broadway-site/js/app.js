@@ -91,24 +91,24 @@ const usingImage = !!MAP_IMAGE.src;
 function buildBaseMap(){
   const base = el('g', { id:'base-layer' });
 
-  // Island shoreline (stylized, pixel-native to a 700x1024 canvas:
-  // ~59th St / Central Park near y=0, the Battery near y=1000)
+  // Island shoreline (stylized, pixel-native to a 500x1000 canvas:
+  // Upper West/East Side near y=0, past Battery Park near y=1000)
   base.appendChild(el('path', { class:'shore', d:
-    "M 195 0 L 150 100 L 140 200 L 150 300 L 155 400 L 150 460 L 150 530 L 150 600 L 140 700 L 140 800 L 150 900 L 225 985 L 300 900 L 335 800 L 340 700 L 345 600 L 345 460 L 345 400 L 345 300 L 340 200 L 350 100 L 330 0" }));
+    "M 140 0 L 105 100 L 100 200 L 105 300 L 110 400 L 105 460 L 105 530 L 105 600 L 100 700 L 100 800 L 105 900 L 160 985 L 215 900 L 240 800 L 245 700 L 245 600 L 245 460 L 245 400 L 245 300 L 245 200 L 250 100 L 235 0" }));
 
   // Grid streets
   for (let y = 40; y < 950; y += 37)
-    base.appendChild(el('line', { class:'street', x1:150, y1:y, x2:345, y2:y }));
-  [190,230,270,300].forEach(x =>
+    base.appendChild(el('line', { class:'street', x1:105, y1:y, x2:245, y2:y }));
+  [135,165,195,215].forEach(x =>
     base.appendChild(el('line', { class:'street', x1:x, y1:20, x2:x, y2:950 })));
 
-  // BROADWAY — the spine (runs through the theater waypoints)
+  // BROADWAY — the spine (runs through the real theater waypoints)
   base.appendChild(el('path', { class:'broadway', d:
-    "M 225 985 L 270 763 L 320 660 L 400 570 L 378 528 L 365 468 L 345 428 L 345 350 L 345 313 L 352 280 L 362 245 L 390 190 L 430 152 L 400 40" }));
+    "M 160 985 L 250 795 L 213 635 L 228 570 L 235 500 L 235 452 L 217 412 L 195 323 L 195 255 L 204 225 L 210 205 L 186 149 L 175 40" }));
 
-  const t = el('text', { class:'dot-label', x:250, y:600, 'font-size':'15' });
+  const t = el('text', { class:'dot-label', x:180, y:600, 'font-size':'15' });
   t.textContent = "BROADWAY";
-  t.setAttribute('transform', 'rotate(75 250 600)');
+  t.setAttribute('transform', 'rotate(75 180 600)');
   base.appendChild(t);
 
   svg.appendChild(base);
@@ -183,19 +183,36 @@ function positionStripMap([vx, vy, vw, vh]){
 window.addEventListener('resize', () => { if (lastView) positionStripMap(lastView); });
 
 /* ------------------------------------------------------------------
-   5) Era switching
+   5) Era switching + zoom
 ------------------------------------------------------------------ */
 let currentEra = null;
+let currentBaseView = ERA_MAP[0].view.slice();  // the era's natural view, pre-zoom
+let zoom = 1;                                    // 1 = fit era; >1 = zoomed out
+const ZOOM_MIN = 0.7, ZOOM_MAX = 4.5, ZOOM_STEP = 1.5;
+
+// Expand a base view around its center by the current zoom, clamped to the map.
+function zoomedView([x, y, w, h]){
+  const cx = x + w/2, cy = y + h/2;
+  let nw = Math.min(w * zoom, MAP_UNITS.w);
+  let nh = Math.min(h * zoom, MAP_UNITS.h);
+  let nx = cx - nw/2, ny = cy - nh/2;
+  nx = Math.max(MAP_UNITS.x, Math.min(nx, MAP_UNITS.x + MAP_UNITS.w - nw));
+  ny = Math.max(MAP_UNITS.y, Math.min(ny, MAP_UNITS.y + MAP_UNITS.h - nh));
+  return [nx, ny, nw, nh];
+}
+
+function applyCamera(){ animateView(zoomedView(currentBaseView)); }
 
 function showEra(id){
   if (id === currentEra) return;
   currentEra = id;
   const era = ERAS.find(e => e.id === id);
+  currentBaseView = era.view.slice();
 
   document.querySelectorAll('.stamp').forEach(s =>
     s.classList.toggle('active', s.dataset.era === id));
 
-  animateView(era.view);
+  applyCamera();
 
   const layer = document.getElementById('era-layer');
   layer.innerHTML = '';
@@ -209,9 +226,18 @@ function showEra(id){
       g.appendChild(el('line', { class:'dot-gone', x1:d.x-5, y1:d.y-5, x2:d.x+5, y2:d.y+5 }));
       g.appendChild(el('line', { class:'dot-gone', x1:d.x-5, y1:d.y+5, x2:d.x+5, y2:d.y-5 }));
     } else {
-      g.appendChild(el('circle', { class:'dot', cx:d.x, cy:d.y, r:5.5 }));
+      g.appendChild(el('circle', { class:'dot', cx:d.x, cy:d.y, r:5 }));
     }
-    const lbl = el('text', { class:'dot-label' + (d.gone ? ' gone' : ''), x:d.x+10, y:d.y+4 });
+    // Flip the label to the LEFT of the dot when the dot sits in the right
+    // portion of the view, so long labels never run off the frame edge.
+    const [vx,,vw] = era.view;
+    const flipLeft = d.x > vx + vw * 0.5;
+    const lbl = el('text', {
+      class:'dot-label' + (d.gone ? ' gone' : ''),
+      x: flipLeft ? d.x - 9 : d.x + 9,
+      y: d.y + 3.5 + (d.ly || 0),
+      'text-anchor': flipLeft ? 'end' : 'start'
+    });
     lbl.textContent = d.label;
     g.appendChild(lbl);
     layer.appendChild(g);
@@ -223,7 +249,29 @@ function showEra(id){
 }
 
 /* ------------------------------------------------------------------
-   6) Scroll observation — cards drive the map
+   6) Zoom controls
+------------------------------------------------------------------ */
+const zoomInBtn  = document.getElementById('zoom-in');
+const zoomOutBtn = document.getElementById('zoom-out');
+const zoomResetBtn = document.getElementById('zoom-reset');
+
+function updateZoomButtons(){
+  // remember: bigger zoom = more zoomed OUT
+  zoomInBtn.disabled  = zoom <= ZOOM_MIN + 1e-6;
+  zoomOutBtn.disabled = zoom >= ZOOM_MAX - 1e-6;
+}
+function setZoom(z){
+  zoom = Math.max(ZOOM_MIN, Math.min(ZOOM_MAX, z));
+  updateZoomButtons();
+  applyCamera();
+}
+zoomInBtn.addEventListener('click',  () => setZoom(zoom / ZOOM_STEP));
+zoomOutBtn.addEventListener('click', () => setZoom(zoom * ZOOM_STEP));
+zoomResetBtn.addEventListener('click', () => setZoom(1));
+updateZoomButtons();
+
+/* ------------------------------------------------------------------
+   7) Scroll observation — cards drive the map
 ------------------------------------------------------------------ */
 const io = new IntersectionObserver(entries => {
   entries.forEach(en => { if (en.isIntersecting) showEra(en.target.dataset.era); });

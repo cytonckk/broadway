@@ -30,30 +30,46 @@ For GitHub Pages: push the repo, then Settings -> Pages -> deploy from main.
 ## The map coordinate system
 
 Coordinates in `js/data.js` are **pixel-native** to `images/manhattan-map.png`,
-which is 700 x 1024px:
+which is 500 x 1000px -- a real, labeled NYC street map (not a stylized
+illustration), covering roughly the Upper West/East Side down to Battery Park.
 
 | | |
 |---|---|
-| x axis | 0 (west/left edge) -> 700 (east/right edge) |
-| y axis | 0 (~Central Park, north/top) -> 1024 (Battery/harbor, south/bottom) |
+| x axis | 0 (west/left edge) -> 500 (east/right edge) |
+| y axis | 0 (~66th St, north/top) -> 1000 (Battery Park, south/bottom) |
 
-A dot at `{x:362, y:245}` sits exactly 362px from the left edge and 245px
+A dot at `{x:195, y:255}` sits exactly 195px from the left edge and 255px
 from the top edge of the image. No unit conversion, no distortion -- what
 you see in an image editor is what you type into `data.js`.
 
-**If you redraw the map at a different size**, scale every x/y and view
-box in `js/data.js` by the same factor (e.g. doubling the canvas to
-1400x2048 means doubling every coordinate too), and update `MAP_UNITS` in
+**If you redraw or replace the map at a different size**, scale every x/y
+and view box in `js/data.js` by the same factor, and update `MAP_UNITS` in
 `js/data.js` to match the new width/height.
 
-The current dot coordinates were read directly off the labeled reference
-map you provided, confirmed by overlaying it pixel-for-pixel against the
-plain map -- they share the same canvas, so the two lined up exactly.
+Every theater's coordinates were derived by looking up its real
+latitude/longitude (Wikipedia for surviving/documented theaters, nearest
+street corner for demolished ones), then applying a least-squares affine
+transform fit from 12 known map landmarks (Times Square, Empire State,
+Grand Central, Union Square, Washington Square, City Hall, Battery Park,
+Carnegie Hall, Lincoln Center, MoMA, Rockefeller Center, Chrysler). So the
+placements are geographically accurate to within a stylized map's limits.
 
-A few dots are marked in comments as **approximate** (Morosco, Helen Hayes,
-Shubert, TKTS/Duffy Square) because they weren't on your labeled reference
-map -- worth double-checking against a period plat map or Google Maps
-before treating them as precise.
+Dots whose comment says `est` used a street corner rather than an exact
+coordinate -- still solid, but the first ones to re-check if anything looks
+off (Astor Place, Union Square Theatre, Booth's, Casino, Tin Pan Alley,
+Olympia, Ziegfeld, Morosco, Helen Hayes, Shubert, TKTS).
+
+Optional per-dot `ly` field nudges a label up/down (used to separate the
+tightest clusters where two theaters sit within a block of each other).
+
+## Zoom
+
+The map has zoom controls (top-right of the frame): **+** / **−** step the
+camera in and out around the current era, **fit** snaps back to that era's
+default framing. Zooming out shows more of the island so you can see where
+each era's cluster sits in context. The zoom level persists as you scroll
+between eras. Tune the limits via `ZOOM_MIN` / `ZOOM_MAX` / `ZOOM_STEP` in
+`js/app.js`.
 
 ## Editing the map
 

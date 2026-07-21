@@ -1,122 +1,118 @@
 /* ==========================================================================
-   DATA — this is the file you'll edit most.
+   DATA -- this is the file you'll edit most.
    ==========================================================================
 
    THE MAP COORDINATE SYSTEM:
-   Coordinates below are PIXEL-NATIVE to images/manhattan-map.png, which is
-   700 x 1024. x runs left-to-right (0-700), y runs top-to-bottom (0-1024),
-   with (0,0) at the top-left corner (roughly Riverside Park / upper Central
-   Park) and (700,1024) at the bottom-right (New York Harbor).
+   Coordinates below are PIXEL-NATIVE to images/manhattan-map.png (500 x 1000).
+   x runs left-to-right (0-500), y runs top-to-bottom (0-1000), with (0,0) at
+   the top-left (Upper West/East Side) and (500,1000) at the bottom (harbor).
 
-   Because coordinates match the image 1:1, there's no unit conversion to
-   get wrong -- a dot at (362,245) sits exactly 362px from the left edge and
-   245px from the top edge of manhattan-map.png. If you redraw the map at a
-   different size, scale every x/y and view box below by the same factor.
+   HOW THESE COORDINATES WERE DERIVED (so you can trust / extend them):
+   Every theater's real latitude/longitude was looked up (Wikipedia geohack
+   for the ones that survive or are well-documented; nearest street corner
+   for the demolished ones). Then a least-squares affine transform was fit
+   from 12 known map landmarks (Times Square, Empire State, Grand Central,
+   Union Square, Washington Square, City Hall, Battery Park, Carnegie Hall,
+   Lincoln Center, MoMA, Rockefeller Center, Chrysler) -- read directly off
+   this map -- and applied to each theater's lat/long. Max landmark fit
+   error was ~27px; most under 15px. So placements are as accurate as a
+   stylized map allows.
 
-   Landmark coordinates here were read directly off Nicholas's labeled
-   reference map (map_draft.png), which shares the exact same 700x1024
-   canvas as manhattan-map.png -- confirmed by overlaying the two.
+   Dots marked "est" in comments used a street corner rather than an exact
+   coordinate -- still good, but the ones to re-check first if anything
+   looks off.
    ========================================================================== */
 
-const MAP_UNITS = { x:0, y:0, w:700, h:1024 };
+const MAP_UNITS = { x:0, y:0, w:500, h:1000 };
 
 const MAP_IMAGE = {
   src: "images/manhattan-map.png",
-  showDotsOverImage: true    // false = hide the gold dots/labels, let your art speak alone
+  showDotsOverImage: true    // false = hide the gold dots/labels, let the map's own labels speak
 };
 
 /* --------------------------------------------------------------------------
    ERA_MAP -- map/coordinate data only. Text content lives in content/eras.js
-   - view: [x, y, w, h] camera box, in image pixels (aim for ~0.75 w:h ratio
-           to match the 3:4 map frame -- avoids letterboxing)
-   - dots: theaters for that era, in image pixels ({gone:true} = demolished X)
+   - view: [x, y, w, h] camera box, in image pixels. Wider than the cluster
+           on purpose, so labels have room and don't run off the frame.
+   - dots: theaters, in image pixels ({gone:true} = demolished X mark)
    - halo: optional [cx, cy, rx, ry] dashed ellipse = the district footprint
    -------------------------------------------------------------------------- */
 const ERA_MAP = [
 
   { id:"e1798", stamp:"1798", date:"1798",
-    view:[150,640,260,347],
+    view:[60,600,300,400],
     dots:[
-      {x:270,y:763,label:"Park Theatre"}
+      {x:204,y:833,label:"Park Theatre"}   // 21-25 Park Row, by City Hall (exact)
     ],
     halo:null,
-    caption:"<b>Park Row, downtown.</b> Theater lives where the whole city lives — below Chambers Street." },
+    caption:"<b>Park Row, downtown.</b> Theater lives where the whole city lives — steps from City Hall." },
 
   { id:"e1849", stamp:"1849", date:"1849",
-    view:[265,460,260,350],
+    view:[120,440,300,400],
     dots:[
-      {x:378,y:705,label:"Bowery Theatre"},
-      {x:365,y:628,label:"Niblo's Garden"},
-      {x:430,y:570,label:"Astor Place Opera House"}
+      {x:285,y:743,label:"Bowery Theatre"},        // 46 Bowery (exact)
+      {x:246,y:652,label:"Niblo's Garden"},         // Broadway & Prince (exact)
+      {x:276,y:579,label:"Astor Place Opera"}       // Astor Place (est)
     ],
     halo:null,
     caption:"<b>The Bowery vs. Astor Place.</b> Working-class theater and 'respectable' theater are now different buildings." },
 
   { id:"e1870", stamp:"1870s", date:"1870s",
-    view:[230,305,260,347],
+    view:[110,290,300,400],
     dots:[
-      {x:365,y:468,label:"Academy of Music"},
-      {x:378,y:528,label:"Union Square Theatre"},
-      {x:345,y:428,label:"Booth's Theatre"}
+      {x:282,y:514,label:"Academy of Music",ly:13},   // 14th & Irving Pl (exact)
+      {x:261,y:509,label:"Union Sq. Theatre"},  // Union Square (est)
+      {x:212,y:441,label:"Booth's Theatre"}     // 23rd & 6th Ave (est)
     ],
-    halo:[371,485,60,75],
+    halo:[252,488,70,55],
     caption:"<b>Union Square, 'The Rialto.'</b> For the first time, theaters cluster on purpose — a district is born." },
 
   { id:"e1893", stamp:"1893", date:"1893",
-    view:[215,195,260,350],
+    view:[75,160,300,400],
     dots:[
-      {x:345,y:388,label:"Tin Pan Alley (W 28th)"},
-      {x:345,y:350,label:"Casino Theatre"}
+      {x:219,y:398,label:"Tin Pan Alley"},   // W 28th, 5th-6th (est)
+      {x:215,y:305,label:"Casino Theatre"}   // Broadway & 39th (est)
     ],
-    halo:[345,369,45,55],
+    halo:[217,352,45,60],
     caption:"<b>Herald Square.</b> The district keeps climbing — and behind the stages, a cartel quietly takes control." },
 
   { id:"e1904", stamp:"1904", date:"1904",
-    view:[220,105,260,350],
+    view:[65,90,300,400],
     dots:[
-      {x:362,y:245,label:"New Amsterdam"},
-      {x:352,y:280,label:"Lyceum"},
-      {x:345,y:313,label:"Olympia (Hammerstein)"}
+      {x:201,y:283,label:"New Amsterdam"},        // 214 W 42nd (exact)
+      {x:216,y:258,label:"Olympia",ly:12},               // Hammerstein's, Bway 44-45 (est)
+      {x:222,y:253,label:"Lyceum"}                 // 149 W 45th (exact)
     ],
-    // Times Square's real footprint IS this cluster -- the reference map's
-    // own "Times Square" pin sits well southwest of here, which is
-    // geographically off (real Times Square = Broadway/7th/42nd, i.e.
-    // right at New Amsterdam). We center the halo on the theaters instead.
-    halo:[353,279,80,115],
+    halo:[212,268,55,55],
     caption:"<b>Times Square, year one.</b> Subway + newspaper + theaters, all in the same year. The center of gravity locks in." },
 
   { id:"e1927", stamp:"1927", date:"1927",
-    view:[270,0,260,347],
+    view:[75,30,300,400],
     dots:[
-      {x:390,y:190,label:"Barrymore"},
-      {x:430,y:152,label:"Ziegfeld"}
+      {x:201,y:235,label:"Barrymore"},   // 243 W 47th (exact)
+      {x:256,y:178,label:"Ziegfeld"}     // 6th Ave & 54th (est)
     ],
-    halo:[405,175,75,100],
+    halo:[225,205,70,70],
     caption:"<b>The district at maximum.</b> Roughly 70–80 houses; the 1927–28 season opens ~264 productions — still the record." },
 
   { id:"e1982", stamp:"1982", date:"1982",
-    view:[255,35,260,350],
+    view:[60,90,300,400],
     dots:[
-      // Morosco & Helen Hayes stood on the same W. 45th-46th block as the
-      // Barrymore, just east of it -- approximate placement, not on the
-      // reference map; verify against a period plat map before printing.
-      {x:405,y:178,label:"Morosco",gone:true},
-      {x:415,y:188,label:"Helen Hayes",gone:true},
-      {x:362,y:245,label:"New Amsterdam (dark)"}
+      {x:203,y:256,label:"Morosco",gone:true},      // 217 W 45th (est)
+      {x:206,y:245,label:"Helen Hayes",gone:true},  // 210 W 46th (est)
+      {x:201,y:283,label:"New Amsterdam"}           // 214 W 42nd (exact)
     ],
     halo:null,
     caption:"<b>Times Square, low point.</b> Red marks = theaters demolished in 1982 for a hotel. The district survives — barely." },
 
   { id:"etoday", stamp:"Today", date:"1997&rarr;",
-    view:[240,70,260,350],
+    view:[65,90,300,400],
     dots:[
-      {x:362,y:245,label:"New Amsterdam (Disney)"},
-      {x:352,y:280,label:"Lyceum"},
-      // Shubert Theatre / TKTS booth -- approximate placement (not on the
-      // reference map), positioned near their real W. 44th/Duffy Sq block.
-      {x:398,y:205,label:"Shubert"},
-      {x:355,y:213,label:"TKTS / Duffy Sq."}
+      {x:201,y:283,label:"New Amsterdam"},   // 214 W 42nd (exact)
+      {x:222,y:253,label:"Lyceum"},           // 149 W 45th (exact)
+      {x:201,y:263,label:"Shubert"},          // 225 W 44th (est)
+      {x:216,y:240,label:"TKTS / Duffy Sq."}  // Broadway & 47th (est)
     ],
-    halo:[370,240,90,130],
+    halo:[212,262,60,65],
     caption:"<b>The modern district.</b> 41 theaters, and an economy of hotels, restaurants, and tourism wrapped around them." }
 ];
