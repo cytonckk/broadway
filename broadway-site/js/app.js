@@ -188,7 +188,7 @@ window.addEventListener('resize', () => { if (lastView) positionStripMap(lastVie
 let currentEra = null;
 let currentBaseView = ERA_MAP[0].view.slice();  // the era's natural view, pre-zoom
 let zoom = 1;                                    // 1 = fit era; >1 = zoomed out
-const ZOOM_MIN = 0.7, ZOOM_MAX = 4.5, ZOOM_STEP = 1.5;
+const ZOOM_MIN = 0.5, ZOOM_MAX = 1.5, ZOOM_STEP = 1.5;
 
 // Expand a base view around its center by the current zoom, clamped to the map.
 function zoomedView([x, y, w, h]){
@@ -231,7 +231,7 @@ function showEra(id){
     // Flip the label to the LEFT of the dot when the dot sits in the right
     // portion of the view, so long labels never run off the frame edge.
     const [vx,,vw] = era.view;
-    const flipLeft = d.x > vx + vw * 0.5;
+    const flipLeft = d.flip !== undefined ? d.flip : d.x > vx + vw * 0.5;
     const lbl = el('text', {
       class:'dot-label' + (d.gone ? ' gone' : ''),
       x: flipLeft ? d.x - 9 : d.x + 9,
@@ -240,6 +240,18 @@ function showEra(id){
     });
     lbl.textContent = d.label;
     g.appendChild(lbl);
+
+    if (d.sub){
+      const sub = el('text', {
+        class:'dot-sublabel' + (d.gone ? ' gone' : ''),
+        x: flipLeft ? d.x - 9 : d.x + 9,
+        y: d.y + 3.5 + (d.ly || 0) + 9,
+        'text-anchor': flipLeft ? 'end' : 'start'
+      });
+      sub.textContent = d.sub;
+      g.appendChild(sub);
+    }
+
     layer.appendChild(g);
     g.animate([{opacity:0},{opacity:1}], { duration:400, delay:250 + i*140, fill:'forwards' });
   });

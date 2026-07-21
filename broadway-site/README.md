@@ -14,7 +14,7 @@ content/eras.js      - ALL ESSAY TEXT: titles, "why this moment", body copy
 js/data.js           - MAP DATA: theater dot coordinates, view boxes, timeline dates
 js/app.js            - rendering logic (merges the two files above; rarely needs edits)
 images/
-  manhattan-map.png   - your hand-drawn map (700x1024)
+  manhattan-map.jpg   - your hand-drawn map (700x1024)
   playbill-logo.png    - the real Playbill wordmark
 ```
 
@@ -29,7 +29,7 @@ For GitHub Pages: push the repo, then Settings -> Pages -> deploy from main.
 
 ## The map coordinate system
 
-Coordinates in `js/data.js` are **pixel-native** to `images/manhattan-map.png`,
+Coordinates in `js/data.js` are **pixel-native** to `images/manhattan-map.jpg`,
 which is 500 x 1000px -- a real, labeled NYC street map (not a stylized
 illustration), covering roughly the Upper West/East Side down to Battery Park.
 

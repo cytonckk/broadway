@@ -221,10 +221,15 @@ body{
 .dot{fill:var(--marquee);stroke:#16110D;stroke-width:1.5}
 .dot-gone{fill:none;stroke:var(--curtain);stroke-width:2.4}
 .dot-label{
-  font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:500;fill:#F3E7CC;
+  font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:500;fill:#FFFFFF;
   paint-order:stroke;stroke:#16110D;stroke-width:2.6px;stroke-linejoin:round;
 }
 .dot-label.gone{fill:#D98A97}
+.dot-sublabel{
+  font-family:'IBM Plex Mono',monospace;font-size:6px;font-weight:500;fill:#FFFFFF;
+  paint-order:stroke;stroke:#28Af55;stroke-width:2px;stroke-linejoin:round;
+}
+.dot-sublabel.gone{fill:#A9757D}
 .district-halo{fill:rgba(233,185,79,.09);stroke:rgba(233,185,79,.35);stroke-width:1;stroke-dasharray:4 4}
 
 /* =========================================================
