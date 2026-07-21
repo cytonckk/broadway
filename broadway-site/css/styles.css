@@ -51,6 +51,10 @@ body{
   max-width:14ch;
 }
 .hero h1 .gold{color:var(--marquee)}
+.hero-instructor{
+  font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:.3em;
+  color:#CBBFA8;text-transform:uppercase;margin-top:22px;
+}
 .hero-rule{
   display:flex;align-items:center;justify-content:center;gap:16px;
   margin:64px auto 0;
@@ -184,7 +188,11 @@ body{
   color:var(--pb-ink-soft);font-family:'IBM Plex Mono',monospace;
   font-size:12.5px;letter-spacing:.05em;padding:14px;
 }
-.img-slot img{border-style:solid;border-color:var(--pb-black)}
+.img-slot img{
+  aspect-ratio:auto;height:auto;object-fit:unset;
+  border-style:solid;border-color:var(--pb-black);
+  background:none;
+}
 .img-slot figcaption{
   font-size:12.5px;color:var(--pb-ink-soft);margin-top:7px;font-style:italic;text-align:center;
 }

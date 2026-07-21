@@ -6,17 +6,17 @@
 const ERA_CONTENT = [
 {
   id:"e1798",
-  title:"The Park Theatre — the city's first real stage",
+  title:"New York's First Stage: The Park Theatre",
   venue:"Park Row · Lower Manhattan",
-  why:"This is the baseline. Before you can talk about Broadway moving, you have to know where it started — and it started at the bottom of the island, because in 1798 the bottom of the island was basically the entire city.",
+  why:"Before Broadway becomes Broadway, we have to go back to the roots of New York theater. It all started at Park Row, downtown, because in 1798, Lower Manhattan was basically the entire city.",
   body:[
     `Here's the thing that surprised me most when I started this project: "Broadway" the street and "Broadway" the institution didn't meet until more than a century after New York theater began. The Park Theatre opened in 1798 on Park Row, across from what's now City Hall Park, and for a few decades it was essentially the only serious game in town. Two thousand seats, a mostly English repertoire, and an audience that included everyone from merchants in the boxes to sailors in the pit — because when there's one theater, everybody goes to the same one.`,
     `I think that last detail matters more than it looks. Early New York theater wasn't a luxury product; it was one of the only shared public rooms the city had. Rich and poor watched the same stage, just from different seats. Keep that in mind, because the entire rest of this timeline is partly a story about that shared room slowly splitting apart — by class, by neighborhood, and eventually by price.`,
     `The Park burned down twice, which is also a theme. Almost nothing on this map survives. Theaters in this era were wooden, gas-lit, and packed — they burned constantly, and the industry just rebuilt wherever the audience had drifted. That drift is the engine of this whole site.`
   ],
   imgs:[
-    {label:"PASTE IMAGE: Park Theatre exterior engraving, c. 1830",
-     cap:"The Park Theatre on Park Row — NYPL Digital Collections (public domain)"}
+    {src:"images/park-theatre-interior.jpg", label:"Park Theatre interior",
+     cap:"Interior of Park Theatre, November 7, 1822"}
   ]
 },
 {

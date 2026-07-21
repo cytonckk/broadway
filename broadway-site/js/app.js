@@ -32,15 +32,19 @@ ERAS.forEach((era, i) => {
   card.id = era.id;
   card.dataset.era = era.id;
 
+  const imgBody = im => im.src
+    ? `<img src="${im.src}" alt="${im.label}">`
+    : `<div class="img-ph">${im.label}</div>`;
+
   const cover = era.imgs[0] ? `
     <figure class="img-slot">
-      <div class="img-ph">${era.imgs[0].label}</div>
+      ${imgBody(era.imgs[0])}
       <figcaption>${era.imgs[0].cap}</figcaption>
     </figure>` : '';
 
   const extraImgs = era.imgs.slice(1).map(im => `
     <figure class="img-slot">
-      <div class="img-ph">${im.label}</div>
+      ${imgBody(im)}
       <figcaption>${im.cap}</figcaption>
     </figure>`).join('');
 
@@ -51,7 +55,7 @@ ERAS.forEach((era, i) => {
     </div>
 
     <div class="pb-cover">
-      <div class="pb-date">${era.date}</div>
+      <div class="pb-date">ACT ${ROMAN[i]}: ${era.date}</div>
       <h2 class="pb-title">${era.title}</h2>
       ${cover}
     </div>
