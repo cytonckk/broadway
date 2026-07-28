@@ -15,7 +15,7 @@ const ERA_CONTENT = [
   venue:"Park Row &amp; Lower Manhattan",
   why:"",
   body:[
-    `Let’s rewind the time. Before Broadway became Broadway, New York theater was just gigs hopping from town to town. There was no theater district, no Times Square, and obviously no gigantic Wicked billboard staring down at you from forty stories up. Actors usually traveled from place to place instead and wherever had an empty venue, that would be the theater for the night.`,
+    `Let’s rewind the time. Before Broadway became Broadway, New York theater was just gigs hopping from town to town. There was no theater district, no Times Square, and obviously no gigantic Wicked billboard staring down at you. Actors usually traveled from place to place instead and wherever had an empty venue, that would be the theater for the night.`,
     `New York eventually got the John Street Theatre in 1767, the city’s first permanent playhouse. John Street was important, but it was basically a wooden shack, the Park Theatre was the much bigger upgrade. When the Park opened in 1798, the building could hold around two thousand people and actually looked like the kind of grand urban theater similar to what we have today.`,
     `The funny part is that New York finally built this grandiose American theater, but inside, the building was predominantly British.`,
     `Shakespeare was everywhere. Audiences watched Hamlet, Macbeth, Richard III, etc. There were no musical numbers, nobody was dramatically belting on stage for three hours. The Broadway musical that we imagine today did not exist yet, and a night at the theater mostly meant spoken drama, comedy, and some music if you are lucky, mostly imported from Britain.`,
