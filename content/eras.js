@@ -222,7 +222,7 @@ const ERA_CONTENT = [
     `The 2025–26 season grossed about $1.91 billion which is a new Broadway gross record. Audiences filled more than 90 percent of available seats, which is kind of ridiculous when you remember that only a few decades earlier people were literally demolishing theaters because Broadway looked like a dying industry, and that is only one part of the equation.`,
     `Broadway also feeds the restaurants around Times Square, the hotels full of tourists, subway and taxi rides, retail shops, bars, costume and production workers, and basically every business that benefits from thousands of people arriving at the district before the curtain closes. The Broadway League’s economic-impact data estimates that Broadway contributes about $14.7 billion to New York City beyond ticket sales and supports roughly 96,900 local jobs.`,
     `The tourism numbers are probably what I find the craziest. Around 65 percent of Broadway audiences are visitors.`,
-    `Broadway is now an important reason people are coming to New York in the first place, really cementing the importance of Broadway and theater to New York.`
+    `Broadway is an important reason people are coming to New York in the first place, with groundbreaking cultural and economic impact to the city, really cementing the importance of Broadway and theater to New York.`
   ],
   imgs:[
     {src:"images/New_Amsterdam_Theatre,_June_2000.jpg", label:"The restored New Amsterdam Theatre",

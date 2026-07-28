@@ -107,7 +107,7 @@ const ERA_MAP = [
     halo:null,
     caption:"<b>Times Square, low point.</b> Red marks = theaters demolished in 1982 for a hotel. The district survives — barely." },
 
-  { id:"etoday", stamp:"Today", date:"1997&rarr;",
+  { id:"etoday", stamp:"Today", date:"TODAY",
     view:[65,90,300,400],
     dots:[
       {x:201,y:283,label:"New Amsterdam",sub:"Disney-owned"},   // 214 W 42nd (exact)
