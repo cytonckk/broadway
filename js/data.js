@@ -42,7 +42,7 @@ const ERA_MAP = [
   { id:"e1798", stamp:"1798", date:"1798",
     view:[60,600,300,400],
     dots:[
-      {x:214,y:833,label:"Park Theatre",sub:"1st Theater"}   // 21-25 Park Row, by City Hall (exact)
+      {x:214,y:833,label:"Park Theatre",sub:"1st Major Theater"}   // 21-25 Park Row, by City Hall (exact)
     ],
     halo:null,
     caption:"<b>Park Row, downtown.</b> Theater lives where the whole city lives — steps from City Hall." },
