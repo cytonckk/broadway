@@ -9,7 +9,6 @@ const readingCol = document.getElementById('reading-col');
 const timeline   = document.getElementById('timeline');
 const svg        = document.getElementById('map-svg');
 const mapFrame   = document.getElementById('map-frame');
-const mapCap     = document.getElementById('map-caption');
 const mapTitle   = document.getElementById('map-era-title');
 const stripMap   = document.getElementById('strip-map');
 const SVGNS      = "http://www.w3.org/2000/svg";
@@ -61,19 +60,15 @@ ERAS.forEach((era, i) => {
     </div>
 
     <div class="pb-program">
+      ${era.why ? `
       <div class="pb-section">Why This Moment</div>
-      <div class="why"><p>${era.why}</p></div>
+      <div class="why"><p>${era.why}</p></div>` : ''}
 
-      <div class="pb-section">The Program</div>
+      <div class="pb-section">THE PROGRAM</div>
       <div class="pb-body">
         ${era.body.map(p => `<p>${p}</p>`).join('')}
         ${extraImgs}
       </div>
-      ${era.sources && era.sources.length ? `
-      <div class="pb-section">Sources</div>
-      <ol class="pb-sources">
-        ${era.sources.map(s => `<li><a href="${s.url}" target="_blank" rel="noopener">${s.name}</a></li>`).join('')}
-      </ol>` : ''}
     </div>`;
 
   readingCol.appendChild(card);
@@ -272,7 +267,6 @@ function showEra(id){
     g.animate([{opacity:0},{opacity:1}], { duration:400, delay:250 + i*140, fill:'forwards' });
   });
 
-  mapCap.innerHTML = era.caption;
   mapTitle.innerHTML = "Manhattan &middot; " + era.stamp;
 }
 

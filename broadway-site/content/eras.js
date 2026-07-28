@@ -11,15 +11,24 @@
 const ERA_CONTENT = [
 {
   id:"e1798",
-  title:"New York's First Stage: The Park Theatre",
-  venue:"Park Row · Lower Manhattan",
-  why:"Before Broadway becomes Broadway, we have to go back to the roots of New York theater. It all started at Park Row, downtown, because in 1798, Lower Manhattan was basically the entire city.",
+  title:"The Park Theatre",
+  venue:"Park Row &amp; Lower Manhattan",
+  why:"",
   body:[
-    `Here's the thing I didn't know before I started this project: for most of the 1700s, "American theater" didn't have a home. It had a suitcase. Before there were permanent playhouses, there were touring companies — troupes of English actors who moved from town to town putting on shows wherever they could find a room, a tavern, or a hastily built wooden hall. The most important of these was the company Lewis Hallam brought over from London, which gave its first American performance — a version of Shakespeare's The Merchant of Venice — in Williamsburg, Virginia, in 1752 (Colonial Williamsburg). They toured up and down the colonies for decades, renting or altering whatever wooden structure they could find in each new town before moving on (Lives & Legacies).`,
-    `That's the world the Park Theatre was born out of, and it's why it matters. New York's first real permanent playhouse was actually the John Street Theatre, which opened in 1767 and got nicknamed "the Birthplace of American Theatre" (CultureNow). But John Street was a modest thing — a wooden building on a dirt road — and by the 1790s the city had outgrown it. The Park Theatre, which opened in 1798 (the same year John Street closed for good), was the upgrade: a genuine, ambitious, roughly two-thousand-seat house meant to prove that New York could take theater seriously. I think of it as the moment the suitcase finally got unpacked.`,
-    `So what were people actually watching? Mostly imported English drama. Shakespeare was the backbone — Hamlet, Macbeth, Richard III — alongside popular British comedies like Richard Sheridan's The School for Scandal and lighter farces to close out the night (EBSCO). This is centuries before the musical exists as we'd recognize it. There was music in the theater, but a night out was built around spoken drama and comedy, not songs. The one genuinely American wrinkle was rare: the first play written by an American to be staged by professionals, Thomas Godfrey's tragedy The Prince of Parthia, had premiered back in 1767, and it was the exception that proved how English the whole enterprise still was (Lives & Legacies).`,
-    `The detail I keep coming back to is who sat in the room. Because there was essentially one major theater, everybody went to the same one — wealthy merchants in the boxes, working people crammed into the pit, all watching the same stage on the same night. Early New York theater wasn't a luxury product; it was one of the only shared public rooms the city had. Rich and poor watched the same show, just from different seats and at different prices. Hold onto that, because the entire rest of this timeline is really the story of that shared room slowly splitting apart — by class, by neighborhood, and eventually by ticket price.`,
-    `One last thing that says a lot about the era: the Park burned down twice. Theaters then were wooden, lit by open gas flame, and packed to the rafters, so they went up in flames constantly, and the industry just rebuilt wherever the audience had drifted to next. Almost nothing from this early map survives today. That restlessness — theater chasing its audience, rebuilding a little further along each time — is the engine of this entire project.`
+    `Let’s rewind the time. Before Broadway became Broadway, New York theater was just gigs hopping from town to town. There was no theater district, no Times Square, and obviously no gigantic Wicked billboard staring down at you from forty stories up. Actors usually traveled from place to place instead and wherever had an empty venue, that would be the theater for the night.`,
+    `New York eventually got the John Street Theatre in 1767, the city’s first permanent playhouse. John Street was important, but it was basically a wooden shack, the Park Theatre was the much bigger upgrade. When the Park opened in 1798, the building could hold around two thousand people and actually looked like the kind of grand urban theater similar to what we have today.`,
+    `The funny part is that New York finally built this grandiose American theater, but inside, the building was predominantly British.`,
+    `Shakespeare was everywhere. Audiences watched Hamlet, Macbeth, Richard III, etc. There were no musical numbers, nobody was dramatically belting on stage for three hours. The Broadway musical that we imagine today did not exist yet, and a night at the theater mostly meant spoken drama, comedy, and some music if you are lucky, mostly imported from Britain.`,
+    `The audience interests me more than the plays, though.`,
+    `Wealthy New Yorkers sat in private boxes while working people occupied the pit and cheaper galleries. The rich still got the good seats. But everyone was at least inside the same building, looking at the same actors.`,
+    `And apparently the audiences were VERY loud.`,
+    `People drank, yelled, stamped their feet, talked during performances, and sometimes threw things at actors they hated. This is rather funny because modern Broadway feels so formal. Speaking from personal experience, you whisper once during Hamilton now and twelve people turn around like you personally killed Alexander Hamilton.`,
+    `Back then Shakespeare sounds closer to a Knicks game, than the Broadway we recognize now.`,
+    `That shared room becomes important because New York eventually loses the shared audience. Rich and poor go from sitting in different sections of one theater to spending their nights in completely different theaters.`,
+    `Then there were the infamous fires.`,
+    `Early theaters combined wooden construction, fabric scenery, and open flames, which is basically a checklist of everything you should NOT put together inside one building. The Park Theatre burned down and was rebuilt, and plenty of other theaters suffered the same fate.`,
+    `Later, Broadway would move north but it was never some perfectly planned migration. New York grew, audiences moved, theaters burned down, and owners rebuilt closer to wherever the people and money had gone.`,
+    `The theater followed the growth of the city.`
   ],
   imgs:[
     {src:"images/park-theatre-interior.jpg", label:"Park Theatre interior",
@@ -34,20 +43,30 @@ const ERA_CONTENT = [
 },
 {
   id:"e1849",
-  title:"The Astor Place Riot — theater splits by class",
+  title:"The Astor Place Riot",
   venue:"The Bowery &amp; Astor Place",
-  why:"I chose 1849 because it's the year the 'shared room' idea died — violently. The Astor Place Riot is the clearest proof that by mid-century, which theater you went to had become a statement about who you were.",
+  why:"",
   body:[
-    `Fifty years after the Park, the single shared room had split in two, and the split ran straight along class lines. Downtown on the Bowery, the Bowery Theatre played to a rowdy, working-class crowd — melodrama, spectacle, cheap seats, and an audience that heckled, cheered, and threw things (this was also the first New York theater lit by gas, which tells you it wasn't some second-rate house — it just served a different public) (Musicals101). A few blocks northwest, the Astor Place Opera House opened in 1847 with a dress code and a menu of Italian opera aimed squarely at the carriage-and-kid-gloves set. Same city, same art form, two completely different rooms — and by 1849 the difference between them was worth killing over.`,
-    `The flashpoint was, of all things, a Shakespeare rivalry. The American actor Edwin Forrest — muscular, plainspoken, a hero to the working class — had a long, bitter feud with the polished British tragedian William Macready, the darling of the elite (Folger). When Macready played Macbeth at the Astor Place Opera House on May 10, 1849, thousands of Forrest's supporters massed outside. The state militia was called in, and they fired into the crowd. Depending on the source, somewhere between twenty-two and thirty-one people were killed (Folger). It remains one of the deadliest civil disturbances in the city's history, and the trigger, on paper, was whose Macbeth was better.`,
-    `Obviously it was never really about Shakespeare. It was about class, immigration, and a young country's resentment of Britain, all of it boiling over in the one public space where those groups actually collided (Gotham Center). The Astor Place Opera House had become a symbol of a wealthy elite trying to wall its culture off behind a dress code, and the crowd outside was rejecting the idea that culture could be fenced in like that. Historians point out that the truly new thing wasn't the riot — New York had riots — it was the state opening fire on its own citizens over a night at the theater (Gotham Center).`,
-    `For my argument, this is the hinge. In 1798 everyone watched the same stage. By 1849, New York theater had stopped being one institution and become a market with segments — a high-culture opera house for the rich, a melodrama house for the workers, and a lethal amount of tension in between. And once culture becomes a market sorted by class, it starts going where the money is. On this map, the money is about to start moving uptown, fast — and the theaters are going to chase it.`
+    `By 1849, the mixed audience of the Park Theatre era was already starting to frizzle. The Bowery Theatre and Astor Place Opera House basically put two completely different versions of New York within walking distance of one another. The Bowery catered largely to working-class audiences, with melodramas, spectacle, and crowds that were LOUD. People cheered, heckled, shouted at villains, and treated the performance like something they were participating in.`,
+    `Then you had the Astor Place Opera House.`,
+    `Then you had the Astor Place Opera House, which catered to wealthy New Yorkers who wanted European opera, formal clothing, expensive seats, and apparently fewer people screaming from the pit. The building even had a dress code.`,
+    `Then, somehow, two Shakespeare actors started beefing, and it was really bad.`,
+    `Edwin Forrest was American, muscular, emotional, and enormously popular with working-class audiences. William Macready was British, controlled, polished, and much more associated with elite theatergoers.`,
+    `Forrest represented a rougher American identity to many of his supporters. Macready represented British refinement and, eventually, the wealthy Americans who seemed to prefer that refinement. Add class resentment and anti-British feeling into the mix and suddenly an argument over whose Macbeth was better became something much more violent.`,
+    `On May 10, 1849, Macready performed Macbeth at Astor Place while thousands gathered outside.`,
+    `The protest became violent.`,
+    `The militia arrived.`,
+    `Eventually soldiers fired into the crowd, killing somewhere around twenty to thirty people.`,
+    `Reading the sequence without context sounds completely insane and this still remains as one of the deadliest civil disturbances in the city's history.`,
+    `Forrest and Macready had become symbols for much larger frustrations about class, nationality, and who got to decide what “good” culture looked like. At the Park Theatre, rich and poor New Yorkers were separated in ONE building. By Astor Place, rich and poor New Yorkers were increasingly separated between MULTIPLE buildings.`,
+    `Different groups wanted different performances, different atmospheres, and even different kinds of people sitting beside them. Once the theater became divided like that, money started determining where the stages went next.`,
+    `And the money was moving north.`
   ],
   imgs:[
-    {label:"PASTE IMAGE: Astor Place Riot lithograph, 1849",
-     cap:"The militia firing on the crowd at Astor Place, 1849 — Library of Congress (public domain)"},
-    {label:"PASTE IMAGE: Bowery Theatre exterior or interior",
-     cap:"The Bowery Theatre — NYPL Digital Collections"}
+    {src:"images/riot.png", label:"The Astor Place Riot outside the Astor Place Opera House",
+     cap:"Great riot at the Astor Place Opera House, New York, May 10, 1849 — N. Currier / Library of Congress"},
+    {src:"images/bowery.jpg", label:"Bowery Theatre, New York City, 1826",
+     cap:"Bowery Theatre, N.Y.C., 1826 — The New York Public Library Digital Collections"}
   ],
   sources:[
     {tag:"Folger", name:"Folger Shakespeare Library — The Astor Place Riot", url:"https://www.folger.edu/blogs/shakespeare-and-beyond/astor-place-riot-macbeth-new-york/"},
@@ -57,21 +76,32 @@ const ERA_CONTENT = [
 },
 {
   id:"e1870",
-  title:"The Rialto — Union Square invents the industry",
-  venue:"Union Square · 'The Rialto'",
-  why:"This stamp isn't about one building; it's about a pattern. Union Square is the first time New York theaters clustered on purpose — and the cluster, not any single theater, is what keeps moving north.",
+  title:"The Rialto",
+  venue:"Union Square",
+  why:"",
   body:[
-    `After the Civil War, the theater district crawled up to Union Square, and the blocks around it turned into what people literally called "The Rialto" — theaters, yes, but also the whole supporting economy that grows up around them: agents' offices, costume and scenery shops, photographers, ticket brokers, and the restaurants where actors got hired over lunch. If you've ever wondered why Broadway still feels like an entire industry crammed into ten blocks, this is where that model got invented. And I want to slow down here, because this era isn't really about one theater — it's about three very different kinds of theater existing side by side, which is the whole point.`,
-    `The grandest was the Academy of Music on 14th Street, built in 1854. This was the city's premier opera house, where New York got its American premieres of Verdi's Il Trovatore and La Traviata and Bizet's Carmen (Musicals101). Opera in this era was the ultimate elite art form — Italian-language, expensive, and socially exclusive by design. The Academy was so exclusive, in fact, that when a wave of newly rich families couldn't buy their way into its private boxes, they went off and built their own opera house to spite it: the Metropolitan Opera, in 1883. That's opera as a class weapon, and it's a straight line from the snobbery that helped spark the Astor Place Riot.`,
-    `Then there was Booth's Theatre, opened in 1869 at 23rd and Sixth by Edwin Booth — the greatest American Shakespearean actor of the century, and, in a grim footnote, the brother of Lincoln's assassin. Booth built one of the most technically advanced and ornate theaters in the country and staged lavish, historically detailed Shakespeare there: Hamlet, Richelieu, the classics (Musicals101). It was a temple to "legitimate" spoken drama at the highest level. It also went broke — Booth had no head for business and lost the theater to bankruptcy within a few years (Musicals101). Keep that failure in mind; it's a recurring theme that the artists rarely control the real estate.`,
-    `And here's the part I love: the American musical was quietly being born a few blocks away, almost by accident. In 1866, a fire at the Academy of Music left a French ballet troupe stranded with no stage. A producer at nearby Niblo's Garden grabbed them and their elaborate scenery and welded them onto a Faust melodrama already in rehearsal, and the resulting five-and-a-half-hour spectacle of tights, special effects, and songs — The Black Crook — became a phenomenon, running a record 474 performances (Classic City News). It's widely called the first American musical, though honestly, historians still argue about whether it really counts (Classic City News). Either way, the ingredients of the musical are now on the board.`,
-    `So the real story of this era is that a theater is a building, but a theater district is an economy. Once opera, Shakespeare, and the first stirrings of the musical are all clustered together with their agents and shops and restaurants, every new theater has a gravitational reason to open near the old ones. That's why the district from here on moves as a single unit rather than scattering — and it's why, when it finally lands in Times Square, it'll be almost impossible to dislodge. The roots aren't the stages; they're the whole ecosystem around them.`
+    `By the 1870s, the theater world had now slowly crawled north toward Union Square, where something much more recognizable as a Broadway district started forming.`,
+    `The neighborhood became known as the Rialto.`,
+    `What I like about the Rialto is that theaters were only part of the picture. Suddenly everything around the theaters mattered almost as much as the theaters themselves.`,
+    `Actors needed agents, productions needed costumes and scenery, somebody needed to sell tickets, producers needed places to meet performers, and restaurants filled with theater people talking business over food. Walking around Midtown today, half the neighborhood still feels indirectly connected to whatever is happening onstage somewhere nearby, and the Rialto is where that kind of ecosystem really starts appearing.`,
+    `The Academy of Music represented the wealthiest side of the district. The Academy presented prestigious European opera and became associated with New York’s established upper class, especially through its exclusive private boxes. Apparently those boxes became so socially difficult to get that newly wealthy families who could not gain access eventually helped create another opera company.`,
+    `That company became the Metropolitan Opera.`,
+    `Honestly, that might be my favorite rich-person response to rejection in New York history.`,
+    `“You won’t give me a box?”`,
+    `Fine.`,
+    `I’ll build the Met.`,
+    `Nearby, Edwin Booth opened Booth’s Theatre in 1869. Booth was considered one of the greatest Shakespearean actors in America and wanted a theater worthy of that reputation, so he built something beautiful, technologically advanced, and filled with elaborate productions. Unfortunately, being an incredible Shakespearean actor apparently does not make someone an incredible businessman. Booth eventually lost the theater after falling into bankruptcy, which becomes a recurring lesson throughout Broadway history: artistic greatness and Manhattan real estate do not always get along.`,
+    `Then there is The Black Crook, which has probably my favorite origin story from early Broadway.`,
+    `In 1866, a fire at the Academy of Music left a French ballet troupe without a stage. Instead of sending everyone home, producer William Wheatley moved the dancers, scenery, and effects into a melodrama already being prepared at Niblo’s Garden. The resulting production combined acting, songs, dancing, giant scenery, special effects, basically everything that was there and audiences absolutely loved it. The Black Crook became a massive hit and was eventually labeled by many historians as the first American musical.`,
+    `I honestly like that the origin is so messy. A building caught on fire.A bunch of dancers suddenly needed somewhere to perform. People started combining things. And somehow this conglomeration of unlucky (or lucky) events is what made the first Musical, a staple to what American art and Broadway is today.`,
+    `But to look at the grand scheme of things, Union Square shows that theater had stopped being only about actors standing onstage. A theater was one building, while a theater district was an entire economy, and once enough agents, restaurants, performers, producers, costume shops, and audiences all depended on being near one another, the whole cluster started moving together.`,
+    `So … even more north we go!`
   ],
   imgs:[
-    {label:"PASTE IMAGE: Union Square / the Rialto, 1870s–80s",
-     cap:"The Rialto around Union Square — Museum of the City of New York"},
-    {label:"PASTE IMAGE: Booth's Theatre exterior, c. 1870",
-     cap:"Edwin Booth's Theatre at 23rd &amp; Sixth — NYPL Digital Collections"}
+    {src:"images/rialto-theater-19_432x339.jpg", label:"Historic Rialto Theatre street scene",
+     cap:"The Rialto Theatre at 10134 101 Street in Edmonton — Cinema Treasures"},
+    {src:"images/Academy_of_Music_(New_York_City)_crop.jpg", label:"The Academy of Music in New York City",
+     cap:"The Academy of Music — unknown photographer, reproduced in Henry Edward Krehbiel’s Chapters of Opera (1909)"}
   ],
   sources:[
     {tag:"Musicals101", name:"Musicals101 (John Kenrick) — Demolished Broadway Theatres & Broadway History", url:"https://www.musicals101.com/bwaypast.htm"},
@@ -80,20 +110,24 @@ const ERA_CONTENT = [
 },
 {
   id:"e1893",
-  title:"Herald Square — showmen, syndicates, and Tin Pan Alley",
-  venue:"Herald Square · W 28th–40th",
-  why:"The Empire Theatre opens at 40th and Broadway in 1893 — the district's northern flag — on the eve of the Theatrical Syndicate. This is when Broadway becomes a business empire, not just a neighborhood.",
+  title:"Herald Square",
+  venue:"Showmen, Syndicates &amp; Tin Pan Alley",
+  why:"",
   body:[
-    `By the 1890s the Rialto had slid north again, up to Herald Square, and the most important action was increasingly happening in offices rather than onstage. This is the era where Broadway stops being just a cluster of theaters and becomes a business — a nationally organized one — and I think it's the most underrated turning point in the whole story.`,
-    `In 1896, six men — producer Charles Frohman and five partners — formed the Theatrical Syndicate, a booking cartel that controlled which shows played which theaters across basically the entire country until the Shubert brothers finally broke their grip in the 1910s (Musicals101). Think about what that means: before Times Square, before the neon, New York had already made itself the command center of American theater through pure business consolidation. A show might tour through fifty towns, but the contracts, the bookings, and the money all ran through Manhattan. That's the moment New York's dominance became structural, not just cultural.`,
-    `The shows themselves were changing too. Three strains of popular musical theater were competing for the same audience: European-style operetta (lush, romantic, imported), musical farce, and the rowdier world of vaudeville (Library of Congress). The Casino Theatre nearby specialized in exactly this kind of tuneful, lighter fare, and it's where the era's runaway hit Floradora landed in 1900. This is the commercial soil the modern American musical is about to grow out of — but it hasn't quite found its own voice yet. It's still borrowing heavily from Europe.`,
-    `And one block-sized detail I can't resist: West 28th Street, where the sheet-music publishers crammed their offices together, got nicknamed Tin Pan Alley — supposedly for the tinny racket of all their cheap pianos banging out songs at once (Library of Congress). The song-publishing industry deliberately parked itself right next to the theater industry, because the two fed each other: a hit show sold sheet music, and a hit song sold tickets. It's the same clustering logic as the Rialto, just one economy feeding another. Broadway, I've come to think, has never really been one industry — it's a bundle of industries all pretending to be one.`
+    `By the 1890s, Broadway had moved farther north toward Herald Square. The Empire Theatre opened near Broadway and 40th Street in 1893 and became one of the biggest commercial theaters at the time. But something more interesting off stage was happening.`,
+    `In 1896, six powerful theater businessmen organized the Theatrical Syndicate, a booking network that gained enormous control over theaters across the country. A production could be playing hundreds of miles away from New York, basically somewhere in Narnia, and businessmen sitting in Manhattan could still influence whether that production got a theater. Broadway became national before Broadway even fully became what we recognize as Broadway, which is kind of insane when you think about it.`,
+    `Meanwhile, musical theater itself was still trying to figure out what it wanted to be. Operetta brought European romance and lush music, musical farce mixed comedy with songs, and vaudeville basically threw anything entertaining onto the same bill, including singers, comedians, dancers, acrobats, and novelty acts. I like the uncertainty of this era because nobody completely knew what the American musical was supposed to look or sound like yet. People were still throwing ingredients into the cooking pot and seeing what audiences actually wanted.`,
+    `A few blocks away, another part of the industry was making an incredible amount of noise. Literally and metaphorically and this part is what I find the most interesting at this era.`,
+    `Sheet-music publishers crowded onto West 28th Street, where songwriters spent their days on their cheap pianos, cranking out as many melodies and ideas as possible. The constant metallic racket supposedly helped give the neighborhood its nickname:`,
+    `Tin Pan Alley.`,
+    `Imagine a chaotic street of twenty open windows with twenty different people playing twenty different songs at the same time while horses, wagons, pedestrians, and street vendors are all moving underneath.`,
+    `The publishers wanted to be near the theaters because theater sold songs and songs sold theater. A catchy number could become sheet music sold across the country, while a popular song could pull audiences toward the show. Broadway was becoming less like one industry and more like a pile of industries feeding one another: theaters, music publishing, restaurants, performers, ticket sales, and real estate. The stage was just the spectacle under the spotlight in this growing economy.`
   ],
   imgs:[
-    {label:"PASTE IMAGE: Empire Theatre exterior, c. 1900",
-     cap:"Frohman's Empire Theatre at Broadway &amp; 40th — NYPL Digital Collections"},
-    {label:"PASTE IMAGE: Tin Pan Alley sheet music cover",
-     cap:"Sheet music from W. 28th Street — Library of Congress, Musical Theater collection"}
+    {src:"images/Tinpanalley.jpg", label:"Music publishers on Tin Pan Alley",
+     cap:"Tin Pan Alley music-publishing offices on West 28th Street — ParlorSongs"},
+    {src:"images/Tin_Pan_Alley_plaque_crop.jpg", label:"Tin Pan Alley landmark plaque on West 28th Street",
+     cap:"Tin Pan Alley plaque — Ben Sutherland; cropped by Beyond My Ken, CC BY 2.0"}
   ],
   sources:[
     {tag:"Musicals101", name:"Musicals101 (John Kenrick) — The Theatrical Syndicate & Broadway History", url:"https://www.musicals101.com/bwaypast.htm"},
@@ -102,21 +136,22 @@ const ERA_CONTENT = [
 },
 {
   id:"e1904",
-  title:"Longacre becomes Times Square — the district finds home",
-  venue:"Longacre Square → Times Square",
-  why:"This is the pivot of the whole project. In about twelve months the subway arrives, The New York Times moves in, and Longacre Square is renamed Times Square. Transit, media, and real estate all land at once — and the century-long migration finally stops.",
+  title:"Times Square",
+  venue:"Times Square",
+  why:"",
   body:[
-    `Everything this project has been building toward happens in a single year. The blocks around 42nd Street were still called Longacre Square — a gritty carriage-and-stable district — when a handful of forces converged almost simultaneously and froze the theater district in place for good.`,
-    `On April 8, 1904, Mayor George McClellan officially renamed Longacre Square "Times Square," after The New York Times, which was building its new tower on the odd triangular block where Broadway crosses Seventh Avenue (Britannica). That October — on the 27th — the city's very first subway line opened, with a station right at 42nd Street, and it instantly became one of the busiest hubs in the system (NYPL). The Times moved into the tower in January 1905, and a couple of years later it started dropping a lit ball from the roof every New Year's Eve, a tradition that began in 1907 (Britannica). Within a decade, an anonymous wagon district had become the most famous intersection in America.`,
-    `Here's my actual argument about why this is the pivot: Broadway didn't choose Times Square for glamour. It chose it because the subway could deliver an audience from anywhere in the city to one single intersection. For a hundred years the district had been chasing its audience northward, rebuilding a little further uptown each time the crowd drifted. The subway ended the chase — once one spot was reachable from everywhere, there was no reason to keep moving. Transit froze the map. That's why the migration this whole site traces basically stops here.`,
-    `And the shows finally found an American voice to match. The same year the square got its name, George M. Cohan — the man usually called the father of American musical comedy — opened Little Johnny Jones (Library of Congress). It's the show that gave us "Give My Regards to Broadway" and "The Yankee Doodle Boy," and it was a genuine break from the imported operetta that had dominated the 1890s: brash, fast-talking, patriotic, full of slang, and unmistakably American (EBSCO). Cohan's real innovation was structural — he built the plot first and fit the songs to it, instead of hanging a thin story on a pile of popular tunes (EBSCO). His shows also openly celebrated the immigrant experience, which is worth flagging, because Broadway is starting to reflect the actual city around it.`,
-    `A few years later the New Amsterdam, one of the theaters that first anchored this block, became the home of the Ziegfeld Follies (1907–1931) — the lavish, star-studded revue that defined Broadway spectacle for a generation (Library of Congress). So by the 1910s you've got the full modern menu taking shape in one district: American musical comedy, the big revue, imported operetta, and straight plays, all within a few blocks of a subway stop. The district didn't just find a home. It found its form.`
+    `By the beginning of the twentieth century, Broadway had almost reached the neighborhood people now imagine when they hear the word Broadway. The New York Times built its new headquarters around the intersection of Broadway and Seventh Avenue, and this was Times Square.`,
+    `But I do not think a newspaper is the real reason Broadway as we know it stayed there. The subway is.`,
+    `New York’s first subway opened later in 1904, and 42nd Street became one of the major stops. For the previous hundred years, theaters had kept chasing their audiences north. When New Yorkers moved, theaters moved. But, the subway completely changed that dynamic as people from all over the city could now suddenly travel straight to 42nd Street. The theaters no longer needed to follow the audience and the audience could finally follow the theaters, which is probably the biggest reason Broadway stopped wandering around Manhattan.`,
+    `At almost exactly the same time, American musicals started sounding less European.`,
+    `George M. Cohan’s Little Johnny Jones opened in 1904 with faster dialogue, slang, patriotism, contemporary stories, and songs like “Give My Regards to Broadway.” Even that title feels extremely meta, like Broadway was finally recognizing itself as something with its own identity. Cohan also helped move musical theater toward songs that actually belonged to the story instead of creating a flimsy plot with an excuse to sing another popular number.`,
+    `Then the Ziegfeld Follies arrived in 1907 and basically looked at subtlety and decided subtlety was boring. The productions had huge casts, elaborate costumes, comedy, famous performers, music, and giant scenery, creating a level of spectacle that matched the neighborhood forming around them. Honestly, I understand the impulse. If thousands of people are pouring out of subway stations into a district filled with glowing signs, advertisements, traffic, music, and crowds, you probably do not compete with all of that by being quiet. Broadway finally found a permanent neighborhood.`
   ],
   imgs:[
-    {label:"PASTE IMAGE: Times Tower / Longacre Square, c. 1904–05",
-     cap:"The Times Tower rising over the new Times Square — Museum of the City of New York"},
-    {label:"PASTE IMAGE: New Amsterdam Theatre facade, c. 1905",
-     cap:"The New Amsterdam on 42nd Street — NYPL Digital Collections"}
+    {src:"images/subway.jpeg", label:"Opening of New York City's first subway on October 27, 1904",
+     cap:"The opening of the first subway in New York, Oct. 27, 1904 — PhotoQuest / Getty Images"},
+    {src:"images/Little_Johnny_Jones.jpg", label:"Little Johnny Jones promotional pamphlet, 1907",
+     cap:"Little Johnny Jones pamphlet by George M. Cohan, Nyvall Press, 1907 — New York Public Library"}
   ],
   sources:[
     {tag:"Britannica", name:"Encyclopaedia Britannica — Times Square", url:"https://www.britannica.com/topic/Times-Square"},
@@ -127,20 +162,22 @@ const ERA_CONTENT = [
 },
 {
   id:"e1927",
-  title:"The Golden Age peak — and the cliff right after it",
-  venue:"Times Square · 70+ Theaters",
-  why:"The 1927–28 season is the statistical summit of Broadway as a production machine — more theaters and openings than ever before or since. I picked the peak on purpose, because you can't understand 60 years of decline without knowing how high the drop started.",
+  title:"The Golden Age",
+  venue:"Times Square",
+  why:"",
   body:[
-    `The numbers from the 1927–28 season almost don't feel real. On the order of 250 or more productions opened in a single season, spread across roughly seventy to eighty theaters — most of them thrown up in a twenty-year building sprint by rival dynasties like the Shuberts (Library of Congress). For comparison, a modern season opens around forty shows across forty-one theaters. This was Broadway at absolute maximum, and by 1927 it wasn't just big — it was artistically the most exciting theater in the world.`,
-    `The whole menu of forms was thriving at once. There were sumptuous operettas like Sigmund Romberg's The Student Prince, lighthearted musical comedies from young songwriters like George Gershwin and Rodgers & Hart, the annual Ziegfeld Follies and its rival revues, and — importantly — a new generation of serious American plays, led by Eugene O'Neill and the Theatre Guild, that finally proved American drama could stand next to the European classics. Broadway had become a genuine world capital of theater, not a province importing everyone else's culture.`,
-    `And then, on December 27, 1927, Show Boat opened at the Ziegfeld Theatre — and everything about what a musical could be changed overnight (Rodgers & Hammerstein). Up to this point, musicals were mostly light: pretty songs, thin plots, spectacle. Show Boat, with Jerome Kern's music and Oscar Hammerstein II's book, wove the songs directly into a serious story that spanned forty years and dealt head-on with racial injustice and an interracial marriage (PBS). It ran 572 performances and gave us "Ol' Man River" (Rodgers & Hammerstein). PBS's history calls it the first time serious Black and white characters shared a Broadway stage as equals (PBS). This is exactly where the "social mirror" part of my project comes alive: a commercial blockbuster that put the country's ugliest subject on a mainstream stage and made audiences sit with it.`,
-    `But I chose 1927 for the cliff as much as the peak. Within two years, the Depression gutted ticket sales, and the arrival of talking pictures gave people a much cheaper night out. One by one, theaters converted into movie houses — same buildings, same marquees, entirely different industry. Here's the part I find most important, and it's a break from everything before it: for the first time, the district didn't shrink by moving somewhere else. It shrank in place. Times Square kept the theaters' bodies even as it lost their business — and that stranded, hollowed-out district is exactly the setup for the decades of decay to come.`
+    `By the late 1920s, Broadway had become enormous. The 1927–28 season had more than 250 productions playing across more than seventy legitimate theaters, while modern Broadway only has forty-one Broadway houses. Trying to imagine seventy-plus active theaters packed around roughly the same neighborhood honestly makes modern Times Square sound calm.`,
+    `The other thing I find impressive is how many different types of theater were thriving at the same time. Audiences could see operetta, musical comedy, giant revues, or serious American drama, so Broadway had stopped being one particular kind of entertainment. One musical I especially want to focus on is Show Boat, which opened in December 1927 and pushed the musical much closer toward the form we recognize today. Songs were woven into a substantial story, characters actually changed over time, and the plot dealt directly with racism and interracial relationships.`,
+    `In my opinion this combination of spectacle with important societal issues becomes one of Broadway’s greatest strengths.`,
+    `Unfortunately, Broadway reached one of its biggest creative peaks at almost the worst possible moment. The Great Depression arrived, and then movies started having audio, which is honestly a brutal combination when your entire business depends on convincing people to pay more for live actors. Suddenly audiences could spend much less money and still watch people sing, speak, kiss, fight, and die on a screen. Broadway theaters began converting into movie houses. The same buildings remained while the purpose inside them changed.`,
+    `Despite this, for the first time, Broadway didn’t move.`,
+    `The theaters, subway lines, hotels, restaurants, and businesses had become too deeply rooted around Times Square. The district finally had a permanent home, which was great until the permanent home itself started falling apart.`
   ],
   imgs:[
-    {label:"PASTE IMAGE: Times Square at night, late 1920s",
-     cap:"The district at full wattage — Museum of the City of New York"},
-    {label:"PASTE IMAGE: Show Boat 1927 production photo or program",
-     cap:"Show Boat at the Ziegfeld, December 1927 — NYPL Billy Rose Theatre Division"}
+    {src:"images/MCNY_88.1.1.2441.jpg", label:"Times Square at night in 1932",
+     cap:"Times Square at Night — Samuel H. Gottscho, 1932; Museum of the City of New York, 88.1.1.2441"},
+    {src:"images/showboat.jpg", label:"Scene from the 1927 stage production of Show Boat",
+     cap:"Scene from the stage production Show Boat, 1927 — Billy Rose Theatre Division, The New York Public Library"}
   ],
   sources:[
     {tag:"Rodgers & Hammerstein", name:"The Rodgers & Hammerstein Organization — Show Boat, 1927 Original Broadway", url:"https://rodgersandhammerstein.com/production/show-boat/1927-original-broadway/"},
@@ -150,20 +187,21 @@ const ERA_CONTENT = [
 },
 {
   id:"e1982",
-  title:"The wrecking ball — Broadway nearly loses its home",
+  title:"The Wrecking Ball",
   venue:"Times Square · The Low Point",
-  why:"1982 is when the decline stopped being abstract. Five theaters — including the Morosco and the Helen Hayes — were torn down for a hotel while actors were arrested protesting outside. It's the closest Broadway ever came to being redeveloped out of its own home.",
+  why:"",
   body:[
-    `The decades after World War II hollowed Times Square out. The middle-class audience left for the suburbs and for television; the grand houses on 42nd Street slid into showing grindhouse and pornographic films; and by the 1970s Times Square had become the national shorthand for urban decay. Remember, transit had frozen the theaters in place — so they didn't leave, they just sat there while the neighborhood rotted around them, and a nearly bankrupt city mostly let it happen (PBS).`,
-    `Then in 1982 redevelopment arrived in the ugliest possible form. To build the Marriott Marquis hotel, the city approved demolishing five theaters — the Morosco, the Helen Hayes, the Bijou, the Astor, and the Gaiety — including houses where Eugene O'Neill and Arthur Miller premieres had run (PBS). Preservationists, led by producer Joseph Papp and Actors' Equity under the banner "Save the Theaters," fought it hard, pulling in famous actors to protest (NYPAP). Demolition began on March 22, 1982; the next day around 165 people were arrested for physically trying to block it (NYPAP). The wrecking ball went through anyway.`,
-    `What was strange and telling is what was playing while this happened. That very same year — October 7, 1982 — a British import called Cats opened a few blocks north at the Winter Garden and quietly began rewriting the economics of Broadway (Smithsonian). So the district hit its absolute low point and planted the seed of its rescue in the same twelve months, a few blocks apart. I'll come back to Cats, because it becomes the whole model for what saves this place.`,
-    `I picked 1982 because it forced the city to answer a question out loud that it had always dodged: what actually is Broadway — a pile of valuable real estate, or an institution worth protecting? The demolition was the wrong answer. But it produced the right reaction. Within a few years the backlash pushed the Landmarks Preservation Commission to designate most of the surviving theaters — around twenty-five of them by 1987 — which is the single reason the district you can walk through today still physically exists (PBS). Sometimes preservation only wins right after it loses.`
+    `After World War II, Times Square slowly started falling apart. Television let people stay home, middle-class families increasingly moved to the suburbs, and many old theaters and cinemas along 42nd Street became grindhouses showing cheap exploitation movies. Some eventually became adult theaters, and by the 1970s Times Square had become associated with crime, drugs, prostitution, and basically everything New York tourism advertisements would later work VERY hard to pretend had never happened. The Broadway theaters were still physically there, but the neighborhood surrounding them had completely changed.`,
+    `Then 1982 arrived. Construction of the Marriott Marquis required the demolition of five theaters: the Morosco, Helen Hayes, Bijou, Astor, and Gaiety. Actors, theater workers, and preservationists protested, and around 165 people were arrested while trying to stop the demolition, but the wrecking ball came through anyway.`,
+    `I believe this period of time to be the worst time in theater, and it is depressing to see a once-thriving business slowly dwindle down and erode to bottom of the barrel, crude entertainment.`,
+    `At almost the exact same time, though, something completely different was happening only a few blocks away. Cats opened at the Winter Garden Theatre. Broadway was basically experiencing death and rebirth at once. Five historic theaters were being destroyed because old Broadway looked like a dying industry, while adults dressed as cats were about to make an unbelievable amount of money in one of the most culturally and economically important musicals of the era.`,
+    `Cats is also very special to me because it was the first musical I ever saw, albeit I saw it on the television. I think I was around seven years old, and looking back now, that show is probably part of why I became interested in live performances in the first place.`
   ],
   imgs:[
-    {label:"PASTE IMAGE: 'Save the Theaters' protest, 1982",
-     cap:"Actors protesting the Morosco demolition, 1982 — verify license (NYPL / news archives)"},
-    {label:"PASTE IMAGE: 42nd Street grindhouse marquees, 1970s",
-     cap:"The district at its lowest — Museum of the City of New York"}
+    {src:"images/morosco demolition.webp", label:"The Morosco Theatre during its demolition in 1982",
+     cap:"The Morosco Theater, 1982 — Thomas Monaster / New York Daily News"},
+    {src:"images/CatsOriginalLondonCast.jpg", label:"The original London cast of Cats",
+     cap:"The original 1981 London cast of Cats"}
   ],
   sources:[
     {tag:"PBS", name:"PBS, Broadway: The American Musical — Resurrection of 42nd Street", url:"https://www.pbs.org/wnet/broadway/essays/resurrection-of-42nd-street/"},
@@ -173,27 +211,31 @@ const ERA_CONTENT = [
 },
 {
   id:"etoday",
-  title:"Rebirth — Broadway as an economic engine",
-  venue:"Times Square · 41 Theaters",
-  why:"1997 — Disney reopening the restored New Amsterdam, with The Lion King arriving that fall — is the cleanest marker of the turnaround. It's when Broadway stopped being something the city tolerated and became something the city's economy is openly built on.",
+  title:"Rebirth",
+  venue:"Times Square",
+  why:"",
   body:[
-    `The comeback was engineered, not accidental. Through the 1990s the state and city seized and cleaned up 42nd Street in a massive redevelopment push, and the keystone of the whole deal was bringing Disney in to restore the New Amsterdam — the same theater that had anchored this block back in 1903 — after a four-year restoration. When The Lion King opened there in the fall of 1997, it wasn't just a hit; it was a statement that Times Square was safe, corporate, and open for family business again (PBS).`,
-    `But the show that actually invented the economic model was the one I flagged in the last act — Cats. I have a soft spot for it, honestly: it was the first musical I ever saw, and I didn't know until I started this project that the goofy singing-cats show I loved as a kid is arguably the most important business event in modern Broadway history. Cats ran eighteen years and 7,485 performances, from 1982 all the way to 2000, and for a long stretch it was the longest-running show Broadway had ever seen (Smithsonian). It's usually called the first "megamusical" — a big-budget, spectacle-driven, sung-through show designed to run for decades and sell to tourists and families regardless of what critics thought (Smithsonian). It even pioneered selling merchandise as a serious revenue stream. Its producer, Cameron Mackintosh, and composer, Andrew Lloyd Webber, followed it with Les Misérables and The Phantom of the Opera, and that British "megamusical" invasion is what refilled these theaters in the 1980s and '90s (London Theatre).`,
-    `That model — long-running, tourist-facing blockbusters that become destinations in themselves — is what turned Broadway into a genuine economic engine, and the numbers now are staggering. The most recent season, 2024–25, grossed about $1.89 billion, the highest in recorded history, with roughly 14.7 million tickets sold (Broadway League). The old record season, 2018–19, drew 14.77 million people — more than all ten of the New York area's major professional sports teams combined (Baruch/CUNY). And that's just ticket sales. The Broadway League's most recent economic-impact study put Broadway's total contribution to the city's economy at about $14.7 billion, supporting nearly 97,000 jobs, most of it from "Broadway tourists" — roughly two-thirds of the audience are visitors, and something like 8.5 million tickets a year go to people who name Broadway as a very important reason for their trip to New York (Baruch/CUNY).`,
-    `It's not all spectacle and franchises, either — the social-mirror thread runs right up to the present. In 2015, Hamilton put a cast of Black and Latino actors in the roles of the white Founding Fathers, set the whole thing to hip-hop, and turned the American immigrant story into the biggest ticket in the world. It's Show Boat's job, done again for a new century: a commercial juggernaut that also forces the audience to see the country differently.`,
-    `And here's the ending I didn't see coming when I started. Two centuries after the Park Theatre, the relationship between Broadway and the city has completely inverted. For a hundred years the theaters chased the city, rebuilding a little further uptown each time the audience moved. Now the city organizes itself around Broadway — its zoning, its policing, its tourism strategy, even the decision to close Times Square to cars and hand it to pedestrians. The clearest symbol of the flip is the Marriott Marquis, the hotel that got the Morosco torn down in 1982: it now exists mostly to house people who came to New York for the theater. The district that spent its whole life chasing the city became the thing the city — and the world — plans around. Broadway isn't just in New York anymore. At this point, a real piece of New York is in Broadway.`
+    `Broadway’s comeback became especially obvious during the 1990s when Disney restored the New Amsterdam Theatre and The Lion King arrived in 1997. Disney moving into 42nd Street was basically a cultural 180 for New York. A few decades earlier, Times Square had been associated with crime and adult theaters; now parents were walking through the same neighborhood with their children to see Simba. That is a pretty aggressive rebrand.`,
+    `Going back to Cats, the show helped establish the megamusical model: giant productions with recognizable imagery, expensive spectacle, huge marketing campaigns, merchandise, and enough tourist appeal to keep running for years. Les Misérables and The Phantom of the Opera pushed the same idea even further. Broadway had figured out that a musical could be more than something tourists happened to see while they were already in New York. The musical itself could become the reason they came to New York.`,
+    `Musicals also keep evolving around us. Wicked has been around for so long that the giant green witch almost feels like part of Times Square now as well as being one of the most successful film adaptations of a musical in recent times. Then Hamilton came along in 2015 and proved that a huge Broadway phenomenon did not have to sound like a traditional Broadway musical at all. Lin-Manuel Miranda took the founding of the United States, cast predominantly Black and Latino actors as the Founding Fathers, and filled the score with rap, hip-hop, and R&amp;B.`,
+    `My personal favorite example of that continued evolution is Maybe Happy Ending, which opened at the Belasco Theatre in 2024. The set design and effects were probably the coolest theatrical experience I have ever had because rooms seemed to appear and disappear, walls moved around the actors, and the whole stage felt almost cinematic and with the fact that everything was physically happening in front of you was amazing.`,
+    `Broadway’s rebirth also becomes a lot more impressive when you stop looking at individual shows and look at how much money the district now moves.`,
+    `The 2025–26 season grossed about $1.91 billion which is a new Broadway gross record. Audiences filled more than 90 percent of available seats, which is kind of ridiculous when you remember that only a few decades earlier people were literally demolishing theaters because Broadway looked like a dying industry, and that is only one part of the equation.`,
+    `Broadway also feeds the restaurants around Times Square, the hotels full of tourists, subway and taxi rides, retail shops, bars, costume and production workers, and basically every business that benefits from thousands of people arriving at the district before the curtain closes. The Broadway League’s economic-impact data estimates that Broadway contributes about $14.7 billion to New York City beyond ticket sales and supports roughly 96,900 local jobs.`,
+    `The tourism numbers are probably what I find the craziest. Around 65 percent of Broadway audiences are visitors.`,
+    `Broadway is now an important reason people are coming to New York in the first place, really cementing the importance of Broadway and theater to New York.`
   ],
   imgs:[
-    {label:"PASTE IMAGE: Restored New Amsterdam / Lion King marquee, 1997+",
-     cap:"The New Amsterdam reborn under Disney — Wikimedia Commons (check license)"},
-    {label:"PASTE IMAGE: Modern Times Square pedestrian plaza",
-     cap:"The district today — Wikimedia Commons"}
+    {src:"images/New_Amsterdam_Theatre,_June_2000.jpg", label:"The restored New Amsterdam Theatre",
+     cap:"New Amsterdam Theatre — Elisa Rolle / Wikimedia Commons, CC BY-SA 3.0"},
+    {src:"images/IMG_1318.jpg", label:"The Belasco Theatre showing Maybe Happy Ending",
+     cap:"The Belasco Theatre showing Maybe Happy Ending — photograph by Nicholas Lau"}
   ],
   sources:[
     {tag:"PBS", name:"PBS, Broadway: The American Musical — Resurrection of 42nd Street", url:"https://www.pbs.org/wnet/broadway/essays/resurrection-of-42nd-street/"},
     {tag:"Smithsonian", name:"Smithsonian — Object of the Day: Cats & the megamusical", url:"https://music.si.edu/node/1197"},
     {tag:"London Theatre", name:"London Theatre — Everything you need to know about Cats", url:"https://www.londontheatre.co.uk/theatre-news/news/everything-you-need-to-know-about-andrew-lloyd-webbers-cats"},
-    {tag:"Broadway League", name:"The Broadway League — 2024–25 Season Statistics", url:"https://www.broadwayleague.com/press/press-releases/broadways-2024-2025-season-wraps-with-147-million-attendances-and-grosses-of-189-billion/"},
+    {tag:"Broadway League", name:"The Broadway League — 2025–26 Season Statistics", url:"https://www.broadwayleague.com/press/press-releases/broadways-20252026-season-wraps-with-146-million-attendances-and-grosses-of-191-billion/"},
     {tag:"Baruch/CUNY", name:"Baruch College / CUNY — Broadway's Economic Impact to NYC (Broadway League data)", url:"https://www.baruch.cuny.edu/nycdata/culture/broadway-economics.htm"}
   ]
 }
